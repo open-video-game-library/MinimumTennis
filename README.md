@@ -41,7 +41,7 @@ Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲー
 ![MinimumTennis_操作方法_ゲームパッド](https://user-images.githubusercontent.com/77042312/187409768-07f14ef2-a8f3-418d-82cd-848223f3fe47.png)
 
 - Joy-Con操作（モーション操作）  
-画像
+![MinimumTennis_操作方法_ジョイコン](https://user-images.githubusercontent.com/77042312/187441191-bd86d576-2e34-45e3-9556-76f9c74dbf17.png)
 
 ### 機能
 
