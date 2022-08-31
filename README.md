@@ -8,6 +8,8 @@ Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲー
 
 ![MiniumuTennis](https://user-images.githubusercontent.com/77042312/187229293-41eef3ab-3adc-469b-8806-3919aefdc7d5.png)
 
+詳しい紹介動画は[こちら](https://youtu.be/3s6Opvb6T8U)をご覧下さい。
+
 ## Contents
 
 ゲームの概要，機能，調整できるパラメータ，出力できるパラメータ，想定される利用方法などを画像を用いて記載  
@@ -41,10 +43,10 @@ Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲー
 ![MinimumTennis_操作方法_ゲームパッド](https://user-images.githubusercontent.com/77042312/187409768-07f14ef2-a8f3-418d-82cd-848223f3fe47.png)
 
 - Joy-Con操作（モーション操作）  
-	- Joy-Con操作で球種を打ち分ける場合は、各球種に該当するボタンを押しながら、Joy-Conを振って下さい。
+	- Joy-Con操作で球種を打ち分ける場合は、各球種に該当するボタンを押しながら、Joy-Conを振って下さい。  
 ![MinimumTennis_操作方法_ジョイコン](https://user-images.githubusercontent.com/77042312/187441191-bd86d576-2e34-45e3-9556-76f9c74dbf17.png)
 
-### 機能
+## Features
 
 - パラメータ調整機能
 
@@ -87,19 +89,25 @@ Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲー
 	- キーボード操作/ゲームパッド操作でプレイする場合は、ホーム画面で「Normal Control」をクリックして下さい。
 	- Joy-Con操作（モーション操作）でプレイする場合は、ホーム画面で「Motion Control」をクリックして下さい。
 
-## Operating Environment
+### 研究利用例
+
+1. ゲームコントローラでの操作と、モーションコントローラでの操作におけるユーザエクスペリエンスの比較と評価
+
+	- 本ゲームを、ゲームパッド操作とJoy-Con操作でそれぞれプレイしてもらい、観察・アンケート・CSV出力されたデータをもとに比較と評価を行う
+
+2. 運動を伴うビデオゲームがユーザに与える影響の調査
+
+	- 本ゲームを、Joy-Con操作でプレイしてもらい、観察・アンケート・CSV出力されたデータをもとに比較と評価を行う
+
+## Requirement
 
 Windows, Mac, Unity 2021.1.17f1
 
-## Programming Languages
-
-Unity, C#
-
-## Introduction
+## Installation
 
 コンテンツの導入方法を記載
 
-## How to Use
+## Usage
 
 使い方を記載
 
