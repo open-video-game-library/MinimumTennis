@@ -6,9 +6,7 @@ Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲー
 
 実験のノイズとならないように、キャラクターの見た目ではプリミティブなデザインを採用し、キャラクターへの先入観の要因となる、人種・体格・性別を排除しました。
 
-![MiniumuTennis](https://user-images.githubusercontent.com/77042312/187229293-41eef3ab-3adc-469b-8806-3919aefdc7d5.png)
-
-詳しい紹介動画は[こちら](https://youtu.be/3s6Opvb6T8U)をご覧下さい。
+![MiniumuTennis]()<img width="788" alt="SlidingPenguin (1)" src="https://user-images.githubusercontent.com/71160720/194980314-bce73dc7-55cf-4a75-8b86-f9ff43629c3d.png">
 
 ## Contents
 
