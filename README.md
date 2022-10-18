@@ -121,20 +121,6 @@ Windows, Mac, Unity 2021.1.17f1
 
 5. Minimum Tennis を研究で利用する場合は、ご自身の論文内で以下の論文を引用して下さい。
 
-- [研究利用しやすく標準性を目指したビデオゲームの設計と開発](http://id.nii.ac.jp/1001/00212465/)
-```
-@inproceedings{weko_212571_1,
-   author	 = "岡,拓也 and 川島,拓也 and 林,大智 and 渡邊,恵太",
-   title	 = "研究利用しやすく標準性を目指したビデオゲームの設計と開発",
-   booktitle	 = "エンタテインメントコンピューティングシンポジウム論文集",
-   year 	 = "2021",
-   volume	 = "2021",
-   number	 = "",
-   pages	 = "181--186",
-   month	 = "aug"
-}
-```
-
 - [研究者が利用しやすいオープンなスポーツゲームの試作](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)   
 ```
 @conference{飯田:2022, 
