@@ -138,11 +138,11 @@ Windows, Mac, Unity 2021.1.17f1
 - [研究者が利用しやすいオープンなスポーツゲームの試作](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)   
 ```
 @conference{飯田:2022, 
-   author        = "飯田,和也 and 岡,拓也 and 川島,拓也 and 簗瀬,洋平 and 渡邊,恵太",
-   title         = "研究者が利用しやすいオープンなスポーツゲームの試作"
-   booktitle     = "インタラクション2022予稿集",
-   year          = "2022",
-   month         = "feb"
+   author	 = "飯田,和也 and 岡,拓也 and 川島,拓也 and 簗瀬,洋平 and 渡邊,恵太",
+   title	 = "研究者が利用しやすいオープンなスポーツゲームの試作"
+   booktitle	 = "インタラクション2022予稿集",
+   year		 = "2022",
+   month	 = "feb"
 }
 ```
 
