@@ -1,102 +1,104 @@
 # Minimum Tennis
 
-Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲームです。
+[日本語版README](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/README.JP.md)
 
-前後左右に移動しながら、タイミングよくボールを打ち返しましょう。
+Minimum Tennis is a simple tennis game in accordance with real tennis.
 
-実験のノイズとならないように、キャラクターの見た目ではプリミティブなデザインを採用し、キャラクターへの先入観の要因となる、人種・体格・性別を排除しました。
+While moving back and forth, left and right, hit the ball back at the right time.
+
+To avoid noise in the experiment, we adopted a primitive design in the appearance of the characters and eliminated the factors that contribute to preconceptions about the characters: race, body size, and gender.
 
 ![MinimumTennis](https://user-images.githubusercontent.com/77042312/194984821-09b2d9e3-a723-4c8e-b5c7-d2905f4f3b8e.png)
 
 ## Contents
 
-### ルール
+### Rule
 
-基本的なルールは、現実のテニスに則っています。
+The rules are in accordance with real tennis.
 
-- 失点となる行為
-	- 打ったボールが相手コートに入らない
-	- 打ったボールがネットにかかる
-	- 相手の打ったボールが自分のコート内で2回バウンドする前に打ち返さない
-	- 打ったサーブが2回連続でフォールトとなる 
+- Conduct that results in a loss of points
+	- The ball you hit does not go into the opponent's court.
+	- A batted ball hits the net.
+	- Not hitting back before the ball hit by the opponent bounces twice in your court.
+	- A serve you hit results in two consecutive faults.
 
-- デュース
-	- 1つのゲームにおいて、両者が3回ずつ得点した場合はデュースとなる
-	- デュースとなった場合、その状態からどちらかが2回連続で得点すると、そのゲームを獲得できる
-	- 2回連続で得点できなかった場合は、再びデュースとなる
+- Deuce
+	- If both players score three times each in a game, deuce is awarded.
+	- If it is a deuce, the game is won if either side scores twice in a row from that situation.
+	- If a player fails to score twice in a row, deuce is again awarded.
 
-- 勝敗
-	- パラメータ調整機能によって指定されたゲーム数を先に獲得すると勝利となる
-	- ◯セットマッチではなく、◯ゲーム先取である点に注意
+- Win or Loss
+	- The first to win the number of games specified by the parameter adjustment function wins the game.
+	- Note that the first to win a certain number of games wins.
 
-### 操作方法
+### How to operate
 
-- キーボード操作  
+- Keyboard Operation   
 ![MinimumTennis_操作方法_キーボード](https://user-images.githubusercontent.com/77042312/187409521-a9babea3-39ee-4838-af45-43a4e764ecf7.png)
 
-- ゲームパッド操作  
+- Gamepad Operation  
 ![MinimumTennis_操作方法_ゲームパッド](https://user-images.githubusercontent.com/77042312/187409768-07f14ef2-a8f3-418d-82cd-848223f3fe47.png)
 
-- Joy-Con操作（モーション操作）  
-	- Joy-Con操作で球種を打ち分ける場合は、各球種に該当するボタンを押しながら、Joy-Conを振って下さい。  
+- Joy-Con Operation (Motion Control)    
+	- To hit different types of shot with the Joy-Con controls, hold down the button corresponding to each type of pitch and shake the Joy-Con.
 ![MinimumTennis_操作方法_ジョイコン](https://user-images.githubusercontent.com/77042312/187441191-bd86d576-2e34-45e3-9556-76f9c74dbf17.png)
 
 ## Features
 
-- パラメータ調整機能
+- Parameter Adjustment Function
 
-	- 以下のパラメータをゲーム画面上で調整できます。
+	- The following parameters can be adjusted on the game.
 	
-		- プレイヤと対戦相手の移動速度
-		- プレイヤと対戦相手の打つボールの速度
-		- プレイヤの反応速度（モーション操作時）
-		- 対戦相手の反応速度
-		- 対戦相手のショットに辿り着くまでの移動距離
-		- プレイスタイル
-		- 試合終了条件
+		- Speed of player and opponent movement
+		- Speed of balls hit by players and opponents
+		- Time of player's reaction (during motion operation)
+		- Time of opponent's reaction
+		- Distance traveled to reach opponent's shot
+		- Playstyle
+		- Match ending condition
 
-- パラメータ出力機能
+- Parameter Output Functions
 
-	- 以下のパラメータをゲーム終了時にCSVファイルとして出力できます。
+	- The following parameters can be output as a CSV file at the end of the game.
 	
-		- 勝者
-		- プレイヤが勝ち取ったゲーム数
-		- 対戦相手が勝ち取ったゲーム数
-		- プレイヤのネットした回数
-		- 対戦相手のネットした回数
-		- プレイヤのアウトした回数
-		- 対戦相手のアウトした回数
-		- プレイヤの２バウンドした回数
-		- 対戦相手の２バウンドした回数
-		- プレイヤのダブルフォルトした回数
-		- プレイヤのダブルフォルトした回数
-		- 最大ラリー回数
+		- Winner
+		- Number of games won by the player
+		- Number of games won by the opponents
+		- Number of times the player netted
+		- Number of times the opponent netted
+		- Number of times the player's ball went out
+		- Number of times the opponent's ball went out
+		- Number of times the player's 2 bounces
+		- Number of times the opponent's 2 bounces
+		- Number of times the player's double-fault.
+		- Number of times the player's double-fault.
+		- Maximum number of rallies
 
-- 対戦プレイ
+- Competitive Play
 
-	- パソコンにゲームパッドを2つ接続することで、2人で対戦プレイをすることができます。
-	- 下の画像のように、タイトル画面に現在登録されているコントローラ数が表示されます。（下の画像では2つ接続されている）
+	- By connecting two gamepads to a computer, two players can play against each other.
+	- As shown in the image below, the number of controllers currently registered is displayed on the title screen. (Two are connected in the image below)
 	
 	![MinimumTennis_登録コントローラ数](https://user-images.githubusercontent.com/77042312/187391138-cc945035-79b5-4f0b-b90d-22efeb7b9c2e.png)
 	
-	- ホーム画面で「Competition」ボタンをクリックすると、対戦プレイの画面へ遷移します。
+	- Clicking on the "Competition Button" on the home screen will take you to the competition play screen.
 
 
-- 複数のコントローラによる操作
+- Operation with Multiple Controllers
 
-	- 本ゲームは、キーボード操作/ゲームパッド操作/Joy-Con操作（モーション操作） の3つに対応しています。
-	- キーボード操作/ゲームパッド操作でプレイする場合は、ホーム画面で「Normal Control」をクリックして下さい。
-	- Joy-Con操作（モーション操作）でプレイする場合は、ホーム画面で「Motion Control」をクリックして下さい。
+	- The game supports three types of operation: keyboard operation, gamepad operation, and Joy-Con operation (motion operation).
+	- To play with keyboard control/gamepad control, click "Normal Control" on the home screen.
+	- To play with Joy-Con control (motion control), click "Motion Control" on the home screen.
 
-### 研究利用例
+### Research Applications
 
-1. ゲームコントローラでの操作と、モーションコントローラでの操作におけるユーザエクスペリエンスの比較と評価
+1. Comparison and evaluation of user experience in game controller operation and motion controller operation
 
-	- 本ゲームを、ゲームパッド操作とJoy-Con操作でそれぞれプレイしてもらい、観察・アンケート・CSV出力されたデータをもとに比較と評価を行う
+	- Play this game with Gamepad and Joy-Con controls to compare and evaluate the user experience of each.
 
-2. 運動を伴うビデオゲームがユーザに与える影響の調査
+2. Investigating the impact of video games with exercise on users
 
-	- 本ゲームを、Joy-Con操作でプレイしてもらい、観察・アンケート・CSV出力されたデータをもとに比較と評価を行う
+	- Play this game with Joy-Con controls to compare and evaluate the user experience of each.
 
 ## Requirement
 
@@ -106,32 +108,32 @@ Unity：2021.1.17f1
 
 ## Installation
 
-Unityは[こちら](https://unity3d.com/jp/get-unity/download/archive)からインストールできます。
+Unity can be installed [here](https://unity3d.com/jp/get-unity/download/archive).
 
-本リポジトリのデータは下記のコマンドを入力することでローカル環境にクローンできます。
+Data in this repository can be cloned to the local environment by entering the following command.
 ```
 git clone https://github.com/open-video-game-library/Minimum-Tennis.git
 ```
 
 ## Usage
 
-Minimum Tennis が動作するために必要なデータはすべて同梱されています。
+All the data necessary for Minimum Tennis to work is included.
 
-3DモデルやSkyboxなどのアセットを変更したい場合は、その都度インポート・置き換えをして下さい。
+If you want to change the 3D model, Skybox, or other assets, import and replace them each time.
 
-また、プロジェクトに含まれているアセットの中には、外部が提供している再配布が認められた素材も含まれています。それらを含んだゲームデータを公開する場合は、同梱されたライセンスファイルをご確認下さい。
+Some of the assets included in the project also include materials provided by outside parties that are permitted for redistribution. If you wish to publish game data containing them, please check the included license file.
 
 ## Licence
 
-1. Minimum Tennis は無料でご利用できます。
+1. Minimum Tennis are available free of charge.
 
-2. 営利目的・公序良俗に反する目的でない限り、研究目的での利用を含め、あらゆる用途で利用できます。
+2. You may use the library for any purpose, including research purposes, as long as it is not for commercial purposes or against public order and morals.
 
-3. ダウンロードしたデータを改変し、ご利用いただいても構いません。
+3. You may modify and use the downloaded data.
 
-4. 利用報告をする必要はありませんが、改変したデータを二次配布する場合を含め、Minimum Tennis を利用した場合は、その旨を明記して下さい。
+4. You are not required to report the use of the data, but please indicate if you have used Minimum Tennis, including secondary distribution of modified data.
 
-5. Minimum Tennis を研究で利用する場合は、ご自身の論文内で以下の論文を引用して下さい。
+5. If you wish to use Minimum Tennis in your research, please cite the following article within your own paper.
 
 - [研究者が利用しやすいオープンなスポーツゲームの試作](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)   
 ```
@@ -147,15 +149,14 @@ Minimum Tennis が動作するために必要なデータはすべて同梱さ�
 
 ## Note
 
-- Minimum Tennis からダウンロードしたものを、自身が開発したものと偽って公開する行為はご遠慮下さい。
+- Please refrain from publishing any material downloaded from Minimum Tennis under the false pretense that it was developed by you.
 
-- Minimum Tennis を利用したことによるトラブル/損害が発生した場合、一切の責任を負いません。
+- We are not responsible for any trouble/damage caused by the use of Minimum Tennis.
 
-- Minimum Tennis のコンテンツや利用規約は、予告なしに変更される場合があります。
+- The content and terms of use of Minimum Tennis are subject to change without notice.
 
-- Minimum Tennis ではゲーム内のパラメータを変更できますが、研究の公平性や再現性を保つために、設定したパラメータの値を明示するようにしてください。
+- Minimum Tennis allows you to change the parameters in the game, but please be sure to clearly state the values of the parameters you set in order to keep the study fair and reproducible.
 
 ## Contact
 
-意見や要望、質問などがありましたら、[こちら](https://open-video-game-library.github.io/info/contact/)からお問い合わせ下さい。
-
+If you have any comments, requests or questions, please contact us [here](https://open-video-game-library.github.io/info/contact/).
