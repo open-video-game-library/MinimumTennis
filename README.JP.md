@@ -1,5 +1,7 @@
 # Minimum Tennis
 
+[English version README](https://github.com/open-video-game-library/Minimum-Tennis/edit/main/README.md)
+
 Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲームです。
 
 前後左右に移動しながら、タイミングよくボールを打ち返しましょう。
