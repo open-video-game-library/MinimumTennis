@@ -108,7 +108,7 @@ Unity：2021.1.17f1
 
 ## Installation
 
-Unity can be installed [here](https://unity3d.com/jp/get-unity/download/archive).
+Unity can be installed [here](https://unity3d.com/get-unity/download/archive).
 
 Data in this repository can be cloned to the local environment by entering the following command.
 ```
