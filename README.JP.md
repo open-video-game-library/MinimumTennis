@@ -34,7 +34,7 @@ Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲー
 ### 操作方法
 
 - キーボード操作  
-![MinimumTennis_操作方法_キーボード](https://user-images.githubusercontent.com/77042312/187409521-a9babea3-39ee-4838-af45-43a4e764ecf7.png)
+![MinimumTennis_操作方法_キーボード](https://user-images.githubusercontent.com/77042312/203004649-45b6048a-7520-40ba-bafa-5c4c51674716.png)
 
 - ゲームパッド操作  
 ![MinimumTennis_操作方法_ゲームパッド](https://user-images.githubusercontent.com/77042312/187409768-07f14ef2-a8f3-418d-82cd-848223f3fe47.png)
