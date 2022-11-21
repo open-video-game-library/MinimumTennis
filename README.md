@@ -35,7 +35,7 @@ The rules are in accordance with real tennis.
 
 - Keyboard Operation  
 
-![MinimumTennis_操作方法_キーボード](https://user-images.githubusercontent.com/77042312/187409521-a9babea3-39ee-4838-af45-43a4e764ecf7.png)
+![MinimumTennis_操作方法_キーボード_英](https://user-images.githubusercontent.com/77042312/203004255-956e3fef-0bc3-4d09-a3d7-a66b2c334ac6.png)
 
 - Gamepad Operation  
 
