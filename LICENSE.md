@@ -24,6 +24,4 @@
   
 - **Original License**
   
-  When you use modified versions of software provided by the Open Video Game Library, you must disclose the source code.
-  
-  When you use the software provided by the Open Video Game Library for research, you must cite the article described in the README file attached to the software you  are using.
+  When using software provided by the Open Video Game Library with modifications, the source code must be disclosed. In addition, when using software provided by the   Open Video Game Library for research, you must cite the article described in the README file included with the software you are using.
