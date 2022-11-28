@@ -128,7 +128,7 @@ Some of the assets included in the project also include materials provided by ou
 
 ## Licence
 
-This content is licensed under the MIT License and the Open Video Game Library original license. Please read the LICENSE file for details.
+This content is licensed under the MIT License and the Open Video Game Library original license. Please read the [LICENSE file](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md) for details.
 
 - If you use Minimum Tennis in your research, please cite the following paper in your paper.
 
