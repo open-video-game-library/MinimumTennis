@@ -124,15 +124,25 @@ All the data necessary for Minimum Tennis to work is included.
 
 If you want to change the 3D model, Skybox, or other assets, import and replace them each time.
 
-Some of the assets included in the project also include materials provided by outside parties that are permitted for redistribution. If you wish to publish game data containing them, please check the included license file.
+Some of the assets included in the project also include materials provided by outside parties that are permitted for redistribution. If you wish to publish game data containing such assets, please check the license file included with each asset.
 
 ## Licence
 
-This content is licensed under the MIT License and the Open Video Game Library original license. Please read the [LICENSE file](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md) for details.
+This content is licensed under the [MIT License and Original License](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md). In order for other researchers to reproduce your experimental environment, please comply with the original license as well.
 
-- If you use Minimum Tennis in your research, please cite the following paper in your paper.
+### Original License
 
-- [研究者が利用しやすいオープンなスポーツゲームの試作](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)   
+When using software provided by the Open Video Game Library with modifications, the source code must be disclosed. In addition, when using software provided by the Open Video Game Library for research, you must cite the article described in the README file included with the software you are using.
+
+## Citation
+
+研究者が利用しやすいオープンなスポーツゲームの試作  
+Prototype of open sports game accessible to researchers
+
+[Click here for the paper page.](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)
+
+### BiBTeX
+
 ```
 @conference{飯田:2022, 
    author	 = "和也,飯田 and 拓也,岡 and 拓也,川島 and 洋平,簗瀬 and 恵太,渡邊",
@@ -143,10 +153,6 @@ This content is licensed under the MIT License and the Open Video Game Library o
    month	 = "feb"
 }
 ```
-
-## Note
-
-- The content and license of Minimum Tennis are subject to change without notice.
 
 ## Contact
 
