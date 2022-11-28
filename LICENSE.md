@@ -25,7 +25,7 @@
 - **Original License**
   
   `English`  
-    When using software provided by the Open Video Game Library with modifications for research purposes, the version of the software and the source code must be disclosed. In addition, when using software provided by the   Open Video Game Library for research, you must cite the article described in the README file included with the software you are using.
+    When using software provided by the Open Video Game Library with modifications for research purposes, you must disclose the software version and its source code, and cite the paper described in the README file included with the software you are using.
     
   `日本語`  
-    研究目的で、オープンビデオゲームライブラリが提供するソフトウェアを改変して使用する場合は、ソフトウェアのバージョンとそのソースコードを公開する必要があります。また、オープンビデオゲームライブラリで提供されているソフトウェアを研究目的で使用する場合は、使用するソフトウェアに同梱されているREADMEファイルに記述されている論文を引用する必要があります。
+    研究目的で、オープンビデオゲームライブラリが提供するソフトウェアを改変して使用する場合は、ソフトウェアのバージョンとそのソースコードを公開し、使用するソフトウェアに同梱されているREADMEファイルに記述されている論文を引用する必要があります。
