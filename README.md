@@ -132,7 +132,7 @@ This content is licensed under the [MIT License and Original License](https://gi
 
 ### Original License
 
-When using software provided by the Open Video Game Library with modifications, the source code must be disclosed. In addition, when using software provided by the Open Video Game Library for research, you must cite the article described in the README file included with the software you are using.
+When using software provided by the Open Video Game Library with modifications, the version of the software and the source code must be disclosed. In addition, when using software provided by the   Open Video Game Library for research, you must cite the article described in the README file included with the software you are using.
 
 ## Citation
 
