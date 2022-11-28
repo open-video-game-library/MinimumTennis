@@ -121,15 +121,24 @@ Minimum Tennis が動作するために必要なデータはすべて同梱さ�
 
 3DモデルやSkyboxなどのアセットを変更したい場合は、その都度インポート・置き換えをして下さい。
 
-また、プロジェクトに含まれているアセットの中には、外部が提供している再配布が認められた素材も含まれています。それらを含んだゲームデータを公開する場合は、同梱されたライセンスファイルをご確認下さい。
+また、プロジェクトに含まれているアセットの中には、外部が提供している再配布が認められた素材も含まれています。それらを含んだゲームデータを公開する場合は、各アセット毎に同梱されたライセンスファイルをご確認下さい。
 
 ## Licence
 
-本コンテンツは、MITライセンスとOpen Video Game Library独自のライセンスのもとで利用が許可されています。詳細は[LICENSEファイル](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md)をお読みください。
+本コンテンツは、[MITライセンスとオリジナルライセンス](https://github.com/open-video-game-library/CommonExperienceSample/blob/main/LICENSE.md)のもとで利用が許可されています。他の実験者が同じ実験環境を再現できるように、オリジナルライセンスも遵守してください。
 
-- Minimum Tennis を研究で利用する場合は、ご自身の論文内で以下の論文を引用して下さい。
+### Original License
 
-- [研究者が利用しやすいオープンなスポーツゲームの試作](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)   
+オープンビデオゲームライブラリが提供するソフトウェアを改変して使用する場合は、ソースコードを公開する必要があります。また、オープンビデオゲームライブラリで提供されているソフトウェアを研究用に使用する場合は、使用するソフトウェアに同梱されているREADMEファイルに記述されている論文を引用する必要があります。
+
+## Citation
+
+研究者が利用しやすいオープンなスポーツゲームの試作
+
+論文は[こちら](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)
+
+### BiBTeX
+
 ```
 @conference{飯田:2022, 
    author	 = "和也,飯田 and 拓也,岡 and 拓也,川島 and 洋平,簗瀬 and 恵太,渡邊",
@@ -140,10 +149,6 @@ Minimum Tennis が動作するために必要なデータはすべて同梱さ�
    month	 = "feb"
 }
 ```
-
-## Note
-
-- Minimum Tennis のコンテンツや利用規約は、予告なしに変更される場合があります。
 
 ## Contact
 
