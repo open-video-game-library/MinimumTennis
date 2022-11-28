@@ -135,7 +135,7 @@ Minimum Tennis が動作するために必要なデータはすべて同梱さ�
 
 研究者が利用しやすいオープンなスポーツゲームの試作
 
-論文は[こちら](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)
+[論文はこちら](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)
 
 ### BiBTeX
 
