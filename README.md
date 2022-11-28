@@ -128,15 +128,9 @@ Some of the assets included in the project also include materials provided by ou
 
 ## Licence
 
-1. Minimum Tennis are available free of charge.
+This content is licensed under the MIT License and the Open Video Game Library original license. Please read the LICENSE file for details.
 
-2. You may use the library for any purpose, including research purposes, as long as it is not for commercial purposes or against public order and morals.
-
-3. You may modify and use the downloaded data.
-
-4. You are not required to report the use of the data, but please indicate if you have used Minimum Tennis, including secondary distribution of modified data.
-
-5. If you wish to use Minimum Tennis in your research, please cite the following article within your own paper.
+- If you use Minimum Tennis in your research, please cite the following paper in your paper.
 
 - [研究者が利用しやすいオープンなスポーツゲームの試作](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)   
 ```
@@ -152,13 +146,7 @@ Some of the assets included in the project also include materials provided by ou
 
 ## Note
 
-- Please refrain from publishing any material downloaded from Minimum Tennis under the false pretense that it was developed by you.
-
-- We are not responsible for any trouble/damage caused by the use of Minimum Tennis.
-
-- The content and terms of use of Minimum Tennis are subject to change without notice.
-
-- Minimum Tennis allows you to change the parameters in the game, but please be sure to clearly state the values of the parameters you set in order to keep the study fair and reproducible.
+- The content and license of Minimum Tennis are subject to change without notice.
 
 ## Contact
 
