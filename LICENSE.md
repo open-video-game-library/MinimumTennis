@@ -21,11 +21,3 @@
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
-  
-- **Original License**
-  
-  `English`  
-    When using software provided by the Open Video Game Library with modifications for research purposes, you must disclose the software version and its source code, and cite the paper described in the README file included with the software you are using.
-    
-  `日本語`  
-    研究目的で、オープンビデオゲームライブラリが提供するソフトウェアを改変して使用する場合は、ソフトウェアのバージョンとそのソースコードを公開し、使用するソフトウェアに同梱されているREADMEファイルに記述されている論文を引用する必要があります。
