@@ -125,11 +125,7 @@ Minimum Tennis が動作するために必要なデータはすべて同梱さ�
 
 ## Licence
 
-本コンテンツは、[MITライセンスとオリジナルライセンス](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md)のもとで利用が許可されています。他の実験者が同じ実験環境を再現できるように、オリジナルライセンスも遵守してください。
-
-### Original License
-
-研究目的で、オープンビデオゲームライブラリが提供するソフトウェアを改変して使用する場合は、ソフトウェアのバージョンとそのソースコードを公開し、使用するソフトウェアに同梱されているREADMEファイルに記述されている論文を引用する必要があります。
+本コンテンツは、[MITライセンス](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md)のもとで利用が許可されています。
 
 ## Citation
 
