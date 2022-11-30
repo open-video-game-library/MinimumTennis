@@ -128,11 +128,7 @@ Some of the assets included in the project also include materials provided by ou
 
 ## Licence
 
-This content is licensed under the [MIT License and Original License](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md). In order for other researchers to reproduce your experimental environment, please comply with the original license as well.
-
-### Original License
-
-When using software provided by the Open Video Game Library with modifications for research purposes, you must disclose the software version and its source code, and cite the paper described in the README file included with the software you are using.
+This content is licensed under the [MIT License](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md). 
 
 ## Citation
 
