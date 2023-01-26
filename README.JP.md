@@ -115,6 +115,38 @@ Unityは[こちら](https://unity3d.com/jp/get-unity/download/archive)からイ�
 git clone https://github.com/open-video-game-library/Minimum-Tennis.git
 ```
 
+ローカル環境にクローンしたUnityのプロジェクトファイルを、上記の"Requirement"の環境で開きます。
+
+開くと、下の画像のような警告が表示されますが、"Ignore"をクリックして下さい。
+
+![warning window](https://user-images.githubusercontent.com/77042312/214867252-7a2321ce-a256-45fe-98bf-fc666866d57f.png)
+
+読み込みが終わり、Unityのエディタが開くと、下の画像のように6件のエラーが発生しています。
+
+![error](https://user-images.githubusercontent.com/77042312/214869138-33a29413-7143-4a01-b13c-460ff922870e.png)
+
+Unityのエディタが開く前に警告が表示されていたのは、このエラーが理由です。
+
+エラーの内容を簡単にまとめると、「Joy-Conを利用するためのアセットが見つからない」となります。
+
+Joy-ConをUnityで利用するためのアセットはサードパーティ製であるため、以下ではそのアセットの導入方法について説明します。
+
+まず、UnityでJoy-Conを利用するためのアセットを[こちらのページ](https://github.com/Looking-Glass/JoyconLib/releases)からダウンロードしていきます。
+
+下の画像の赤枠で囲われている"JoyconLib06.unitypackage"をクリックし、ダウンロードします。
+
+![JoyconLib_GitHub](https://user-images.githubusercontent.com/77042312/214875311-4a56ce12-4cbd-4cff-9676-d66843bee620.png)
+
+ダウンロードした"JoyconLib06.unitypackage"を下の画像のように、UnityエディタのProjectウインドウにドラッグアンドドロップします。
+
+![JoyconLib_UnityEditor](https://user-images.githubusercontent.com/77042312/214879097-f879126f-4785-41b9-8420-5a102b6c3094.png)
+
+すると、下の画像のようなウインドウが表示されます。
+
+![JoyconLib_Import](https://user-images.githubusercontent.com/77042312/214879647-253bfb25-87c4-451e-a431-632cf38e819f.png)
+
+
+
 ## Usage
 
 Minimum Tennis が動作するために必要なデータはすべて同梱されています。
