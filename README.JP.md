@@ -165,7 +165,7 @@ DebugPrint(string.Format("Dequeue. Queue length: {0:d}. Packet ID: {1:X2}. Times
 DebugPrint(string.Format("Dequeue. Queue length: {0:d}. Packet ID: {1:X2}. Timestamp: {2:X2}. Lag to dequeue: {3:t}. Lag between packets (expect 15ms): {4:g}",
 ```
 
-コードを書き換えたら、保存をしてます。
+コードを書き換えたら、保存をします。
 
 この状態でゲームを起動し、エラーが出なければ導入成功です。
 
