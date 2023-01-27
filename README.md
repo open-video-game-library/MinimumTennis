@@ -118,6 +118,60 @@ Data in this repository can be cloned to the local environment by entering the f
 git clone https://github.com/open-video-game-library/Minimum-Tennis.git
 ```
 
+Open the cloned Unity project file in your local environment in the "Requirement" environment described above.
+
+When it opens, you will see a warning message like the image below, click on "Ignore".
+
+![warning window](https://user-images.githubusercontent.com/77042312/214867252-7a2321ce-a256-45fe-98bf-fc666866d57f.png)
+
+When loading is finished and the Unity editor opens, there are 6 errors as shown in the image below.
+
+![error](https://user-images.githubusercontent.com/77042312/214869138-33a29413-7143-4a01-b13c-460ff922870e.png)
+
+The warnings displayed before opening the Unity editor are due to these errors.
+
+The error can be summarized simply as "Asset not found to use Joy-Con".
+
+Since the assets for using Joy-Con with Unity are third-party, the following explains how to install these assets.
+
+First, download the assets for using Joy-Con in Unity from [this page](https://github.com/Looking-Glass/JoyconLib/releases).
+
+Click on the "JoyconLib06.unitypackage" highlighted in red in the image below to download the file.
+
+![JoyconLib_GitHub](https://user-images.githubusercontent.com/77042312/214875311-4a56ce12-4cbd-4cff-9676-d66843bee620.png)
+
+Drag and drop the downloaded "JoyconLib06.unitypackage" into the Unity Editor's Project window as shown in the image below.
+
+![JoyconLib_UnityEditor](https://user-images.githubusercontent.com/77042312/214879097-f879126f-4785-41b9-8420-5a102b6c3094.png)
+
+Then, a window like the one in the image below will be displayed, and click on "Import".
+
+![JoyconLib_Import](https://user-images.githubusercontent.com/77042312/214879647-253bfb25-87c4-451e-a431-632cf38e819f.png)
+
+When the assets are finished loading, the assets are imported into the Project file and the errors disappear, but if you run the game, you will get a new error.
+
+Since this error is caused by the imported assets, rewrite the scripts in the assets.
+
+Open the "Joycon" script in the "JoyconLib_scripts" folder in the Project file as shown in the image below.
+
+![JoyconLib_EditScript](https://user-images.githubusercontent.com/77042312/215122961-42ff274b-6e4c-40a0-9754-0051295fbf47.png)
+
+Replace the code on line 370 of the opened script with the following code from the code before the change.
+
+before
+```
+DebugPrint(string.Format("Dequeue. Queue length: {0:d}. Packet ID: {1:X2}. Timestamp: {2:X2}. Lag to dequeue: {3:s}. Lag between packets (expect 15ms): {4:s}",
+```
+
+after
+```
+DebugPrint(string.Format("Dequeue. Queue length: {0:d}. Packet ID: {1:X2}. Timestamp: {2:X2}. Lag to dequeue: {3:t}. Lag between packets (expect 15ms): {4:g}",
+```
+
+After rewriting the code, save it.
+
+Start the game in this state, and if no error occurs, the installation was successful.
+
 ## Usage
 
 All the data necessary for Minimum Tennis to work is included.
