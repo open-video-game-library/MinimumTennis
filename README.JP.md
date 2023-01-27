@@ -141,11 +141,11 @@ Joy-ConをUnityで利用するためのアセットはサードパーティ製�
 
 ![JoyconLib_UnityEditor](https://user-images.githubusercontent.com/77042312/214879097-f879126f-4785-41b9-8420-5a102b6c3094.png)
 
-すると、下の画像のようなウインドウが表示されます。
+すると、下の画像のようなウインドウが表示されるので、そのまま"Import"をクリックして下さい。
 
 ![JoyconLib_Import](https://user-images.githubusercontent.com/77042312/214879647-253bfb25-87c4-451e-a431-632cf38e819f.png)
 
-
+アセットの読み込みが終了すると、Projectファイルにアセットがインポートされています。
 
 ## Usage
 
