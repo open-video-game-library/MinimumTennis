@@ -145,7 +145,29 @@ Joy-ConをUnityで利用するためのアセットはサードパーティ製�
 
 ![JoyconLib_Import](https://user-images.githubusercontent.com/77042312/214879647-253bfb25-87c4-451e-a431-632cf38e819f.png)
 
-アセットの読み込みが終了すると、Projectファイルにアセットがインポートされています。
+アセットの読み込みが終了するとProjectファイルにアセットがインポートされ、先程まで出ていたエラーが消えますが、このままゲームを動かすとまたエラーが出てしまいます。
+
+このエラーは、インポートしたアセットが理由で起こっているため、アセット内のスクリプトを少し書き換えていきます。
+
+下の画像が指すように、Projectファイルにある"JoyconLib_scripts"フォルダ内の"Joycon"スクリプトを開きます。
+
+![JoyconLib_EditScript](https://user-images.githubusercontent.com/77042312/215122961-42ff274b-6e4c-40a0-9754-0051295fbf47.png)
+
+開いたスクリプトの370行目のコードを、変更前のコードから以下のコードに書き換えて下さい。
+
+変更前
+```
+DebugPrint(string.Format("Dequeue. Queue length: {0:d}. Packet ID: {1:X2}. Timestamp: {2:X2}. Lag to dequeue: {3:s}. Lag between packets (expect 15ms): {4:s}",
+```
+
+変更後
+```
+DebugPrint(string.Format("Dequeue. Queue length: {0:d}. Packet ID: {1:X2}. Timestamp: {2:X2}. Lag to dequeue: {3:t}. Lag between packets (expect 15ms): {4:g}",
+```
+
+コードを書き換えたら、保存をしてます。
+
+この状態でゲームを起動し、エラーが出なければ導入成功です。
 
 ## Usage
 
