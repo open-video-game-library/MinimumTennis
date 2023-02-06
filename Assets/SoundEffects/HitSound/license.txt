@@ -1,0 +1,9 @@
+These sound effects "hit_sound_1.wav", "hit_sound_2.wav", "hit_sound_3.wav" and "serve.wav" were created by modifying WolfOWI's work.
+The original work is licensed under the Noncommercial 3.0 License (https://creativecommons.org/licenses/by-nc/3.0/).
+
+Original Author：WolfOWI
+Date of Publication：September 26, 2021
+Title：Quick Tennis Racket Hits OWI
+Download URL：https://freesound.org/people/WolfOWI/sounds/588297/
+
+All rights reserved.
