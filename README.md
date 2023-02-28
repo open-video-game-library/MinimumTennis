@@ -8,7 +8,7 @@ While moving back and forth, left and right, hit the ball back at the right time
 
 To avoid noise in the experiment, we adopted a primitive design in the appearance of the characters and eliminated the factors that contribute to preconceptions about the characters: race, body size, and gender.
 
-![MinimumTennis](https://user-images.githubusercontent.com/77042312/194984821-09b2d9e3-a723-4c8e-b5c7-d2905f4f3b8e.png)
+![MinimumTennis_4](https://user-images.githubusercontent.com/77042312/221799399-7e0d1931-a4db-45f6-a162-482de88c9a6a.png)
 
 ## Contents
 
