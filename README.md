@@ -1,107 +1,104 @@
 # Minimum Tennis
 
-[日本語版README](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/README.JP.md)
+[English version README](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/README.md)
 
-Minimum Tennis is a simple tennis game in accordance with real tennis.
+Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲームです。
 
-While moving back and forth, left and right, hit the ball back at the right time.
+前後左右に移動しながら、タイミングよくボールを打ち返しましょう。
 
-To avoid noise in the experiment, we adopted a primitive design in the appearance of the characters and eliminated the factors that contribute to preconceptions about the characters: race, body size, and gender.
+実験のノイズとならないように、キャラクターの見た目ではプリミティブなデザインを採用し、キャラクターへの先入観の要因となる、人種・体格・性別を排除しました。
 
-![MinimumTennis_4](https://user-images.githubusercontent.com/77042312/221799399-7e0d1931-a4db-45f6-a162-482de88c9a6a.png)
+![MinimumTennis_4](https://user-images.githubusercontent.com/77042312/221799772-c4a4f92b-da00-4079-bc77-acb19b7df975.png)
 
 ## Contents
 
-### Rule
+### ルール
 
-The rules are in accordance with real tennis.
+基本的なルールは、現実のテニスに則っています。
 
-- Conduct that results in a loss of points
-	- The ball you hit does not go into the opponent's court.
-	- A batted ball hits the net.
-	- Not hitting back before the ball hit by the opponent bounces twice in your court.
-	- A serve you hit results in two consecutive faults.
+- 失点となる行為
+	- 打ったボールが相手コートに入らない
+	- 打ったボールがネットにかかる
+	- 相手の打ったボールが自分のコート内で2回バウンドする前に打ち返さない
+	- 打ったサーブが2回連続でフォールトとなる 
 
-- Deuce
-	- If both players score three times each in a game, deuce is awarded.
-	- If it is a deuce, the game is won if either side scores twice in a row from that situation.
-	- If a player fails to score twice in a row, deuce is again awarded.
+- デュース
+	- 1つのゲームにおいて、両者が3回ずつ得点した場合はデュースとなる
+	- デュースとなった場合、その状態からどちらかが2回連続で得点すると、そのゲームを獲得できる
+	- 2回連続で得点できなかった場合は、再びデュースとなる
 
-- Win or Loss
-	- The first to win the number of games specified by the parameter adjustment function wins the game.
-	- Note that the first to win a certain number of games wins.
+- 勝敗
+	- パラメータ調整機能によって指定されたゲーム数を先に獲得すると勝利となる
+	- ◯セットマッチではなく、◯ゲーム先取である点に注意
 
-### How to operate
+### 操作方法
 
-- Keyboard Operation  
+- キーボード操作  
+![MinimumTennis_操作方法_キーボード](https://user-images.githubusercontent.com/77042312/203004649-45b6048a-7520-40ba-bafa-5c4c51674716.png)
 
-![MinimumTennis_操作方法_キーボード_英](https://user-images.githubusercontent.com/77042312/203004255-956e3fef-0bc3-4d09-a3d7-a66b2c334ac6.png)
+- ゲームパッド操作  
+![MinimumTennis_操作方法_ゲームパッド](https://user-images.githubusercontent.com/77042312/187409768-07f14ef2-a8f3-418d-82cd-848223f3fe47.png)
 
-- Gamepad Operation  
-
-![MinimumTennis_操作方法_ゲームパッド_英](https://user-images.githubusercontent.com/77042312/202995633-a79ff877-ac26-46b0-ba55-473e36c0155b.png)
-
-- Joy-Con Operation (Motion Control)    
-	- To hit different types of shot with the Joy-Con controls, hold down the button corresponding to each type of pitch and shake the Joy-Con.
-	
-![MinimumTennis_操作方法_ジョイコン_英](https://user-images.githubusercontent.com/77042312/202995765-ef5b195e-d090-4518-a386-82dc9346b3ee.png)
+- Joy-Con操作（モーション操作）  
+	- Joy-Con操作で球種を打ち分ける場合は、各球種に該当するボタンを押しながら、Joy-Conを振って下さい。  
+![MinimumTennis_操作方法_ジョイコン](https://user-images.githubusercontent.com/77042312/187441191-bd86d576-2e34-45e3-9556-76f9c74dbf17.png)
 
 ## Features
 
-- Parameter Adjustment Function
+- パラメータ調整機能
 
-	- The following parameters can be adjusted on the game.
+	- 以下のパラメータをゲーム画面上で調整できます。
 	
-		- Speed of player and opponent movement
-		- Speed of balls hit by players and opponents
-		- Time of player's reaction (during motion operation)
-		- Time of opponent's reaction
-		- Distance traveled to reach opponent's shot
-		- Playstyle
-		- Match ending condition
+		- プレイヤと対戦相手の移動速度
+		- プレイヤと対戦相手の打つボールの速度
+		- プレイヤの反応速度（モーション操作時）
+		- 対戦相手の反応速度
+		- 対戦相手のショットに辿り着くまでの移動距離
+		- プレイスタイル
+		- 試合終了条件
 
-- Parameter Output Functions
+- パラメータ出力機能
 
-	- The following parameters can be output as a CSV file at the end of the game.
+	- 以下のパラメータをゲーム終了時にCSVファイルとして出力できます。
 	
-		- Winner
-		- Number of games won by the player
-		- Number of games won by the opponents
-		- Number of times the player netted
-		- Number of times the opponent netted
-		- Number of times the player's ball went out
-		- Number of times the opponent's ball went out
-		- Number of times the player's 2 bounces
-		- Number of times the opponent's 2 bounces
-		- Number of times the player's double-fault.
-		- Number of times the player's double-fault.
-		- Maximum number of rallies
+		- 勝者
+		- プレイヤが勝ち取ったゲーム数
+		- 対戦相手が勝ち取ったゲーム数
+		- プレイヤのネットした回数
+		- 対戦相手のネットした回数
+		- プレイヤのアウトした回数
+		- 対戦相手のアウトした回数
+		- プレイヤの２バウンドした回数
+		- 対戦相手の２バウンドした回数
+		- プレイヤのダブルフォルトした回数
+		- プレイヤのダブルフォルトした回数
+		- 最大ラリー回数
 
-- Competitive Play
+- 対戦プレイ
 
-	- By connecting two gamepads to a computer, two players can play against each other.
-	- As shown in the image below, the number of controllers currently registered is displayed on the title screen. (Two are connected in the image below)
+	- パソコンにゲームパッドを2つ接続することで、2人で対戦プレイをすることができます。
+	- 下の画像のように、タイトル画面に現在登録されているコントローラ数が表示されます。（下の画像では2つ接続されている）
 	
 	![MinimumTennis_登録コントローラ数](https://user-images.githubusercontent.com/77042312/187391138-cc945035-79b5-4f0b-b90d-22efeb7b9c2e.png)
 	
-	- Clicking on the "Competition Button" on the home screen will take you to the competition play screen.
+	- ホーム画面で「Competition」ボタンをクリックすると、対戦プレイの画面へ遷移します。
 
 
-- Operation with Multiple Controllers
+- 複数のコントローラによる操作
 
-	- The game supports three types of operation: keyboard operation, gamepad operation, and Joy-Con operation (motion operation).
-	- To play with keyboard control/gamepad control, click "Normal Control" on the home screen.
-	- To play with Joy-Con control (motion control), click "Motion Control" on the home screen.
+	- 本ゲームは、キーボード操作/ゲームパッド操作/Joy-Con操作（モーション操作） の3つに対応しています。
+	- キーボード操作/ゲームパッド操作でプレイする場合は、ホーム画面で「Normal Control」をクリックして下さい。
+	- Joy-Con操作（モーション操作）でプレイする場合は、ホーム画面で「Motion Control」をクリックして下さい。
 
-### Research Applications
+### 研究利用例
 
-1. Comparison and evaluation of user experience in game controller operation and motion controller operation
+1. ゲームコントローラでの操作と、モーションコントローラでの操作におけるユーザエクスペリエンスの比較と評価
 
-	- Play this game with Gamepad and Joy-Con controls to compare and evaluate the user experience of each.
+	- 本ゲームを、ゲームパッド操作とJoy-Con操作でそれぞれプレイしてもらい、観察・アンケート・CSV出力されたデータをもとに比較と評価を行う
 
-2. Investigating the impact of video games with exercise on users
+2. 運動を伴うビデオゲームがユーザに与える影響の調査
 
-	- Play this game with Joy-Con controls to compare and evaluate the user experience of each.
+	- 本ゲームを、Joy-Con操作でプレイしてもらい、観察・アンケート・CSV出力されたデータをもとに比較と評価を行う
 
 ## Requirement
 
@@ -111,85 +108,84 @@ Unity：2021.1.17f1
 
 ## Installation
 
-Unity can be installed [here](https://unity3d.com/get-unity/download/archive).
+Unityは[こちら](https://unity3d.com/jp/get-unity/download/archive)からインストールできます。
 
-Data in this repository can be cloned to the local environment by entering the following command.
+本リポジトリのデータは下記のコマンドを入力することでローカル環境にクローンできます。
 ```
 git clone https://github.com/open-video-game-library/Minimum-Tennis.git
 ```
 
-Open the cloned Unity project file in your local environment in the "Requirement" environment described above.
+ローカル環境にクローンしたUnityのプロジェクトファイルを、上記の"Requirement"の環境で開きます。
 
-When it opens, you will see a warning message like the image below, click on "Ignore".
+開くと、下の画像のような警告が表示されますが、"Ignore"をクリックして下さい。
 
 ![warning window](https://user-images.githubusercontent.com/77042312/214867252-7a2321ce-a256-45fe-98bf-fc666866d57f.png)
 
-When loading is finished and the Unity editor opens, there are 6 errors as shown in the image below.
+読み込みが終わり、Unityのエディタが開くと、下の画像のように6件のエラーが発生しています。
 
 ![error](https://user-images.githubusercontent.com/77042312/214869138-33a29413-7143-4a01-b13c-460ff922870e.png)
 
-The warnings displayed before opening the Unity editor are due to these errors.
+Unityのエディタが開く前に警告が表示されていたのは、このエラーが理由です。
 
-The error can be summarized simply as "Asset not found to use Joy-Con".
+エラーの内容を簡単にまとめると、「Joy-Conを利用するためのアセットが見つからない」となります。
 
-Since the assets for using Joy-Con with Unity are third-party, the following explains how to install these assets.
+Joy-ConをUnityで利用するためのアセットはサードパーティ製であるため、以下ではそのアセットの導入方法について説明します。
 
-First, download the assets for using Joy-Con in Unity from [this page](https://github.com/Looking-Glass/JoyconLib/releases).
+まず、UnityでJoy-Conを利用するためのアセットを[こちらのページ](https://github.com/Looking-Glass/JoyconLib/releases)からダウンロードしていきます。
 
-Click on the "JoyconLib06.unitypackage" highlighted in red in the image below to download the file.
+下の画像の赤枠で囲われている"JoyconLib06.unitypackage"をクリックし、ダウンロードします。
 
 ![JoyconLib_GitHub](https://user-images.githubusercontent.com/77042312/214875311-4a56ce12-4cbd-4cff-9676-d66843bee620.png)
 
-Drag and drop the downloaded "JoyconLib06.unitypackage" into the Unity Editor's Project window as shown in the image below.
+ダウンロードした"JoyconLib06.unitypackage"を下の画像のように、UnityエディタのProjectウインドウにドラッグアンドドロップします。
 
 ![JoyconLib_UnityEditor](https://user-images.githubusercontent.com/77042312/214879097-f879126f-4785-41b9-8420-5a102b6c3094.png)
 
-Then, a window like the one in the image below will be displayed, and click on "Import".
+すると、下の画像のようなウインドウが表示されるので、そのまま"Import"をクリックして下さい。
 
 ![JoyconLib_Import](https://user-images.githubusercontent.com/77042312/214879647-253bfb25-87c4-451e-a431-632cf38e819f.png)
 
-When the assets are finished loading, the assets are imported into the Project file and the errors disappear, but if you run the game, you will get a new error.
+アセットの読み込みが終了するとProjectファイルにアセットがインポートされ、先程まで出ていたエラーが消えますが、このままゲームを動かすとまたエラーが出てしまいます。
 
-Since this error is caused by the imported assets, rewrite the scripts in the assets.
+このエラーは、インポートしたアセットが理由で起こっているため、アセット内のスクリプトを少し書き換えていきます。
 
-Open the "Joycon" script in the "JoyconLib_scripts" folder in the Project file as shown in the image below.
+下の画像が指すように、Projectファイルにある"JoyconLib_scripts"フォルダ内の"Joycon"スクリプトを開きます。
 
 ![JoyconLib_EditScript](https://user-images.githubusercontent.com/77042312/215122961-42ff274b-6e4c-40a0-9754-0051295fbf47.png)
 
-Replace the code on line 370 of the opened script with the following code from the code before the change.
+開いたスクリプトの370行目のコードを、変更前のコードから以下のコードに書き換えて下さい。
 
-before
+変更前
 ```
 DebugPrint(string.Format("Dequeue. Queue length: {0:d}. Packet ID: {1:X2}. Timestamp: {2:X2}. Lag to dequeue: {3:s}. Lag between packets (expect 15ms): {4:s}",
 ```
 
-after
+変更後
 ```
 DebugPrint(string.Format("Dequeue. Queue length: {0:d}. Packet ID: {1:X2}. Timestamp: {2:X2}. Lag to dequeue: {3:t}. Lag between packets (expect 15ms): {4:g}",
 ```
 
-After rewriting the code, save it.
+コードを書き換えたら、保存をします。
 
-Start the game in this state, and if no error occurs, the installation was successful.
+この状態でゲームを起動し、エラーが出なければ導入成功です。
 
 ## Usage
 
-All the data necessary for Minimum Tennis to work is included.
+Minimum Tennis が動作するために必要なデータはすべて同梱されています。
 
-If you want to change the 3D model, Skybox, or other assets, import and replace them each time.
+3DモデルやSkyboxなどのアセットを変更したい場合は、その都度インポート・置き換えをして下さい。
 
-Some of the assets included in the project also include materials provided by outside parties that are permitted for redistribution. If you wish to publish game data containing such assets, please check the license file included with each asset.
+また、プロジェクトに含まれているアセットの中には、外部が提供している再配布が認められた素材も含まれています。それらを含んだゲームデータを公開する場合は、各アセット毎に同梱されたライセンスファイルをご確認下さい。
 
 ## Licence
 
-This content is licensed under the [MIT License](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md). 
+本コンテンツは、[MITライセンス](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md)のもとで利用が許可されています。
 
 ## Citation
 
-研究者が利用しやすいオープンなスポーツゲームの試作  
-Prototype of open sports game accessible to researchers
+研究者が利用しやすいオープンなスポーツゲームの試作
 
-[Click here for the paper page.](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)
+[論文はこちら](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)
 
 ### BiBTeX
 
@@ -206,4 +202,5 @@ Prototype of open sports game accessible to researchers
 
 ## Contact
 
-If you have any comments, requests or questions, please contact us [here](https://open-video-game-library.github.io/info/contact/).
+意見や要望、質問などがありましたら、[こちら](https://open-video-game-library.github.io/info/contact/)からお問い合わせ下さい。
+
