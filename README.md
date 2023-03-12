@@ -112,7 +112,7 @@ Unityは[こちら](https://unity3d.com/jp/get-unity/download/archive)からイ�
 
 本リポジトリのデータは下記のコマンドを入力することでローカル環境にクローンできます。
 ```
-git clone https://github.com/open-video-game-library/Minimum-Tennis.git
+git clone https://github.com/open-video-game-library/MinimumTennis.git
 ```
 
 ローカル環境にクローンしたUnityのプロジェクトファイルを、上記の"Requirement"の環境で開きます。
