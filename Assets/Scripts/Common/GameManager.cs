@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-
+        //　ラリーの最大回数を更新する
         if (rallyCount > csv.maxRallyCount) { csv.maxRallyCount = rallyCount; }
 
         ballAmount = CheckBallAmount();
@@ -393,16 +393,19 @@ public class GameManager : MonoBehaviour
 
     public void ReportBallOut()
     {
+        // GameManagerにアウトであることを報告するための関数
         if (inPlay && ballBoundCount == 0) { isOut = true; }
     }
 
     public void ReportBallNet()
     {
+        // GameManagerにネットであることを報告するための関数
         if (inPlay) { isNet = true; }
     }
 
     public void Retry()
     {
+        // このシーンをリロードする
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

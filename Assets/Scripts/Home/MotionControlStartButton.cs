@@ -25,8 +25,8 @@ public class MotionControlStartButton : MonoBehaviour
         OpponentReactionDelay.delay = 20;
         Distance.distance = 0.50f;
 
-        PlayerColor.playerColor = new Color32(210, 210, 210, 255);
-        OpponentColor.opponentColor = new Color32(95, 95, 95, 255);
+        PlayerColor.playerColor = new Color32(255, 255, 255, 255);
+        OpponentColor.opponentColor = new Color32(30, 30, 30, 255);
 
         SceneManager.LoadScene("MotionTennisScene");
     }

@@ -150,7 +150,6 @@ public class JoyconInputManager : MonoBehaviour
 
     private void OnGUI()
     {
-        // Display Joy-Con sensor information while pressing Enter key
         if (!Input.GetKey(KeyCode.Return)) { return; }
 
         var style = GUI.skin.GetStyle("label");
@@ -158,20 +157,20 @@ public class JoyconInputManager : MonoBehaviour
 
         if (m_joycons == null || m_joycons.Count <= 0)
         {
-            GUILayout.Label("Joy-Con is not connected.");
+            GUILayout.Label("Joy-Con が接続されていません");
             return;
         }
 
-        if (m_joyconL == null) { GUILayout.Label("Joy-Con (L) is not connected."); }
+        if (m_joyconL == null) { GUILayout.Label("Joy-Con (L) が接続されていません"); }
         if (m_joyconR == null)
         {
-            GUILayout.Label("Joy-Con (R) is not connected.");
+            GUILayout.Label("Joy-Con (R) が接続されていません");
             return;
         }
 
         GUILayout.BeginHorizontal(GUILayout.Width(960));
 
-        // Read only right side of Joy-Con (for debugging)
+        // Joy-Conの右側のみ読み取り（デバッグ用）
         var name = "Joy-Con (R)";
         var button = m_pressedButtonR;
         var stick = m_joyconR.GetStick();
@@ -181,11 +180,11 @@ public class JoyconInputManager : MonoBehaviour
 
         GUILayout.BeginVertical(GUILayout.Width(480));
         GUILayout.Label(name);
-        GUILayout.Label("Pressed Button：" + button);
-        GUILayout.Label(string.Format("Stick：({0}, {1})", stick[0], stick[1]));
-        GUILayout.Label("Gyro：" + gyro);
-        GUILayout.Label("Acceleration：" + accel);
-        GUILayout.Label("Orientation：" + orientation);
+        GUILayout.Label("押されているボタン：" + button);
+        GUILayout.Label(string.Format("スティック：({0}, {1})", stick[0], stick[1]));
+        GUILayout.Label("ジャイロ：" + gyro);
+        GUILayout.Label("加速度：" + accel);
+        GUILayout.Label("傾き：" + orientation);
         GUILayout.EndVertical();
 
         GUILayout.EndHorizontal();

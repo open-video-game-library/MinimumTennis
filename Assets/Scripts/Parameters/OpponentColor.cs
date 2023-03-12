@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class OpponentColor : MonoBehaviour
 {
     [System.NonSerialized]
-    public static Color32 opponentColor = new Color32(95, 95, 95, 255);
+    public static Color32 opponentColor = new Color32(30, 30, 30, 255);
 
     [SerializeField]
     private GameObject opponent;

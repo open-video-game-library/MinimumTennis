@@ -69,7 +69,7 @@ public class PlayerAutoControllAI : MonoBehaviour
         
         if (lastShooter != opponent.name && GameManager.lastShooter == opponent.name)
         {
-            // The moment your opponent hits the ball back
+            // 対戦相手がボールを打ち返した瞬間
             Vector3 ballArrivalPoint = CalculateBallArrivalPoint();
             if (GameManager.courtAreaBegin.x - 5.0f <= ballArrivalPoint.x && ballArrivalPoint.x <= GameManager.courtAreaEnd.x + 5.0f
                 && GameManager.courtAreaBegin.z - 5.0f <= ballArrivalPoint.z && ballArrivalPoint.z <= GameManager.courtAreaEnd.z + 5.0f)
@@ -83,7 +83,7 @@ public class PlayerAutoControllAI : MonoBehaviour
         }
         else if (lastShooter != name && GameManager.lastShooter == name)
         {
-            // The moment you hit the ball back
+            // 自分がボールを打ち返した瞬間
             nextTargetPosition = OptimizePosition();
             UpdateTargetPosition(nextTargetPosition, delay * 1.50f);
             ResetDecidedTakeback();
@@ -142,14 +142,14 @@ public class PlayerAutoControllAI : MonoBehaviour
 
         if (transform.position.z < CalculateBallArrivalPoint().z)
         {
-            // Hit the ball back with a forehand
+            // フォアで打ち返す
             lateralDirection = 1;
             takebackLeft = false;
             takebackRight = true;
         }
         else
         {
-            // Hit the ball back with a backhand
+            // バックで打ち返す
             lateralDirection = -1;
             takebackLeft = true;
             takebackRight = false;

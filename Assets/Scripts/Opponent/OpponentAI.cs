@@ -62,7 +62,7 @@ public class OpponentAI : MonoBehaviour
 
         if (lastShooter != player.name && GameManager.lastShooter == player.name)
         {
-            // The moment the player hits the ball back
+            // プレイヤーがボールを打ち返した瞬間            
             Vector3 ballArrivalPoint = CalculateBallArrivalPoint();
             if (GameManager.courtAreaBegin.x - 5.0f <= ballArrivalPoint.x && ballArrivalPoint.x <= GameManager.courtAreaEnd.x + 5.0f
                 && GameManager.courtAreaBegin.z - 5.0f <= ballArrivalPoint.z && ballArrivalPoint.z <= GameManager.courtAreaEnd.z + 5.0f)
@@ -75,7 +75,7 @@ public class OpponentAI : MonoBehaviour
         }
         else if (lastShooter != name && GameManager.lastShooter == name)
         {
-            // The moment the opponent hits the ball back
+            // 自分がボールを打ち返した瞬間
             nextTargetPosition = OptimizePosition();
             UpdateTargetPosition(nextTargetPosition, delay * 1.50f);
         }

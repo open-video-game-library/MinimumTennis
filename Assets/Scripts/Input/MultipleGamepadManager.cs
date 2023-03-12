@@ -51,7 +51,7 @@ public class MultipleGamepadManager : MonoBehaviour
     {
         if (Gamepad.all.Count < playerNum)
         {
-            Debug.Log("The number of controllers currently connected is " + Gamepad.all.Count + ". To play this game, please connect the two controllers to your PC.");
+            Debug.Log("現在接続されているコントローラーは" + Gamepad.all.Count + "個です。 プレイするには2個以上のコントローラーをPCに接続して下さい。");
             return;
         }
         

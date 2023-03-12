@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerColor : MonoBehaviour
 {
     [System.NonSerialized]
-    public static Color32 playerColor = new Color32(210, 210, 210, 255);
+    public static Color32 playerColor = new Color32(255, 255, 255, 255);
 
     [SerializeField]
     private GameObject player;
