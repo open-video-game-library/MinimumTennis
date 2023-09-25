@@ -1,6 +1,6 @@
 # Minimum Tennis
 
-[日本語版README](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/README.JP.md)
+[日本語版README](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/README_JP.md)
 
 Minimum Tennis is a simple tennis game in accordance with real tennis.
 
