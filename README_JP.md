@@ -42,7 +42,7 @@ Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲー
 
 
 - Joy-Con操作（モーション操作）  
-	- Joy-Con操作で球種を打ち分ける場合は、各球種に該当するボタンを押しながら、Joy-Conを振って下さい。  
+	- Joy-Con操作で球種を打ち分ける場合は、各球種に該当するボタンを押しながら、Joy-Conを振って下さい。<br>
 ![MinimumTennis_操作方法_ジョイコン](https://github.com/open-video-game-library/MinimumTennis/assets/63552585/89536f2d-8821-46b0-b4ec-23fe4846488a)
 
 
