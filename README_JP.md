@@ -34,14 +34,17 @@ Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲー
 ### 操作方法
 
 - キーボード操作  
-![MinimumTennis_操作方法_キーボード](https://user-images.githubusercontent.com/77042312/203004649-45b6048a-7520-40ba-bafa-5c4c51674716.png)
+![MinimumTennis_操作方法_キーボード](https://github.com/open-video-game-library/MinimumTennis/assets/63552585/a2c45c0d-dd13-4382-9771-a6dff22e6a0e)
+
 
 - ゲームパッド操作  
-![MinimumTennis_操作方法_ゲームパッド](https://user-images.githubusercontent.com/77042312/187409768-07f14ef2-a8f3-418d-82cd-848223f3fe47.png)
+![MinimumTennis_操作方法_ゲームパッド](https://github.com/open-video-game-library/MinimumTennis/assets/63552585/2279f2b9-5d63-4dfa-907f-f76c67071a8b)
+
 
 - Joy-Con操作（モーション操作）  
 	- Joy-Con操作で球種を打ち分ける場合は、各球種に該当するボタンを押しながら、Joy-Conを振って下さい。  
-![MinimumTennis_操作方法_ジョイコン](https://user-images.githubusercontent.com/77042312/187441191-bd86d576-2e34-45e3-9556-76f9c74dbf17.png)
+![MinimumTennis_操作方法_ジョイコン](https://github.com/open-video-game-library/MinimumTennis/assets/63552585/89536f2d-8821-46b0-b4ec-23fe4846488a)
+
 
 ## Features
 
