@@ -35,16 +35,21 @@ The rules are in accordance with real tennis.
 
 - Keyboard Operation  
 
-![MinimumTennis_操作方法_キーボード_英](https://user-images.githubusercontent.com/77042312/203004255-956e3fef-0bc3-4d09-a3d7-a66b2c334ac6.png)
+![MinimumTennis_操作方法_キーボード_英](https://github.com/open-video-game-library/MinimumTennis/assets/63552585/551b4f09-6e80-46b5-8ca5-4dc2d0397545)
+
 
 - Gamepad Operation  
 
-![MinimumTennis_操作方法_ゲームパッド_英](https://user-images.githubusercontent.com/77042312/202995633-a79ff877-ac26-46b0-ba55-473e36c0155b.png)
+![MinimumTennis_操作方法_ゲームパッド_英](https://github.com/open-video-game-library/MinimumTennis/assets/63552585/f701ff26-7514-4ced-b29c-2f7e70f6a565)
+
+
+
 
 - Joy-Con Operation (Motion Control)    
 	- To hit different types of shot with the Joy-Con controls, hold down the button corresponding to each type of pitch and shake the Joy-Con.
 	
-![MinimumTennis_操作方法_ジョイコン_英](https://user-images.githubusercontent.com/77042312/202995765-ef5b195e-d090-4518-a386-82dc9346b3ee.png)
+![MinimumTennis_操作方法_ジョイコン_英](https://github.com/open-video-game-library/MinimumTennis/assets/63552585/09ab75d2-a5df-45e6-b428-58971dd7d8cd)
+
 
 ## Features
 
