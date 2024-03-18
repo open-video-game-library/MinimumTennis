@@ -1,6 +1,6 @@
 # Minimum Tennis
 
-[日本語版README](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/README_JP.md)
+[日本語版README](https://github.com/open-video-game-library/MinimumTennis/blob/main/README_JP.md)
 
 Minimum Tennis is a simple tennis game in accordance with real tennis.
 
@@ -178,8 +178,6 @@ After rewriting the code, save it.
 Start the game in this state, and if no error occurs, the installation was successful.
 
 ## Usage
-
-All the data necessary for Minimum Tennis to work is included.
 
 If you want to change the 3D model, Skybox, or other assets, import and replace them each time.
 
