@@ -187,7 +187,7 @@ Some of the assets included in the project also include materials provided by ou
 
 ## Licence
 
-This content is licensed under the [MIT License](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md). 
+This content is licensed under the [MIT License](https://github.com/open-video-game-library/MinimumTennis/blob/main/LICENSE.md). 
 
 ## Use in Research
 
