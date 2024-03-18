@@ -1,6 +1,6 @@
 # Minimum Tennis
 
-[English version README](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/README.md)
+[English version README](https://github.com/open-video-game-library/MinimumTennis/blob/main/README.md)
 
 Minimum Tennisは、現実のテニスに則ったシンプルなテニスゲームです。
 
@@ -173,8 +173,6 @@ DebugPrint(string.Format("Dequeue. Queue length: {0:d}. Packet ID: {1:X2}. Times
 この状態でゲームを起動し、エラーが出なければ導入成功です。
 
 ## Usage
-
-Minimum Tennis が動作するために必要なデータはすべて同梱されています。
 
 3DモデルやSkyboxなどのアセットを変更したい場合は、その都度インポート・置き換えをして下さい。
 
