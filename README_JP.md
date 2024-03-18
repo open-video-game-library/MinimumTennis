@@ -184,24 +184,9 @@ Minimum Tennis が動作するために必要なデータはすべて同梱さ�
 
 本コンテンツは、[MITライセンス](https://github.com/open-video-game-library/Minimum-Tennis/blob/main/LICENSE.md)のもとで利用が許可されています。
 
-## Citation
+## Use in Research
 
-研究者が利用しやすいオープンなスポーツゲームの試作
-
-[論文はこちら](http://www.interaction-ipsj.org/proceedings/2022/data/pdf/4D18.pdf)
-
-### BiBTeX
-
-```
-@conference{飯田:2022, 
-   author	 = "和也,飯田 and 拓也,岡 and 拓也,川島 and 洋平,簗瀬 and 恵太,渡邊",
-   title	 = "研究者が利用しやすいオープンなスポーツゲームの試作"
-   booktitle	 = "インタラクション2022予稿集",
-   institution	= "明治大学総合数理学部先端メディアサイエンス学科, 明治大学大学院先端数理科学研究科先端メディアサイエンス専攻, 明治大学大学院先端数理科学研究科先端メディアサイエンス専攻, ユニティ・テクノロジーズ・ジャパン株式会社, 明治大学総合数理学部先端メディアサイエンス学科",
-   year		 = "2022",
-   month	 = "feb"
-}
-```
+[本コンテンツを研究利用する場合の推奨事項](https://github.com/open-video-game-library/MinimumTennis/blob/main/RESEARCH_USE.JP.md)
 
 ## Contact
 
