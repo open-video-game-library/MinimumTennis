@@ -2,71 +2,111 @@ using System.Collections;
 using UnityEngine;
 using System;
 
-public class KeyboardInputManager : MonoBehaviour
+public class KeyboardInputManager : MonoBehaviour, IInputDevice
 {
-    [NonSerialized]
-    public bool isPressedA = false;
-    [NonSerialized]
-    public bool isPressedD = false;
-    [NonSerialized]
-    public bool isPressedW = false;
-    [NonSerialized]
-    public bool isPressedS = false;
-    [NonSerialized]
-    public bool isPressedL = false;
-    [NonSerialized]
-    public bool isPressedK = false;
-    [NonSerialized]
-    public bool isPressedI = false;
-    [NonSerialized]
-    public bool isPressedJ = false;
-    [NonSerialized]
-    public bool isAnyKeyPressed = false;
+    private bool isPressedA;
+    private bool isPressedD;
+    private bool isPressedW;
+    private bool isPressedS;
 
-    private readonly int defaultExtensionFrame = 30;
+    private bool isPressedL;
+    private bool isPressedK;
+    private bool isPressedI;
+    private bool isPressedJ;
 
-    void Update()
+    private bool isPressedSpace;
+    private bool isPressedEscape;
+
+    private readonly int extensionFrame = 30;
+
+    void FixedUpdate()
     {
         isPressedA = Input.GetKey(KeyCode.A);
         isPressedD = Input.GetKey(KeyCode.D);
         isPressedW = Input.GetKey(KeyCode.W);
         isPressedS = Input.GetKey(KeyCode.S);
 
-        // Only once per frame to determine if the button is pressed.
-        if (Input.GetKeyDown(KeyCode.L)) { ExtendInputFrameL(); }
-        else if (Input.GetKeyDown(KeyCode.K)) { ExtendInputFrameK(); }
-        else if (Input.GetKeyDown(KeyCode.I)) { ExtendInputFrameI(); }
-        else if (Input.GetKeyDown(KeyCode.J)) { ExtendInputFrameJ(); }
-        isAnyKeyPressed = isPressedL || isPressedK || isPressedI || isPressedJ;
+        if (Input.GetKeyDown(KeyCode.L)) { ExtendInputEastFrame(); }
+        else if (Input.GetKeyDown(KeyCode.K)) { ExtendInputSouthFrame(); }
+        else if (Input.GetKeyDown(KeyCode.I)) { ExtendInputNorthFrame(); }
+        else if (Input.GetKeyDown(KeyCode.J)) { ExtendInputWestFrame(); }
+
+        isPressedSpace = Input.GetKeyDown(KeyCode.Space);
+        isPressedEscape = Input.GetKeyDown(KeyCode.Escape);
     }
 
-    private void ExtendInputFrameL()
+    public Vector2 GetMoveInput(Players player)
+    {
+        float leftValue = isPressedA ? -1.0f : 0.0f;
+        float rightValue = isPressedD ? 1.0f : 0.0f;
+        float frontValue = isPressedW ? 1.0f : 0.0f;
+        float backValue = isPressedS ? -1.0f : 0.0f;
+
+        return new Vector2(leftValue + rightValue, frontValue + backValue);
+    }
+
+    public bool GetNormalShotInput(Players player)
+    {
+        return isPressedL;
+    }
+
+    public bool GetLobShotInput(Players player)
+    {
+        return isPressedK;
+    }
+
+    public bool GetFastShotInput(Players player)
+    {
+        return isPressedI;
+    }
+
+    public bool GetDropShotInput(Players player)
+    {
+        return isPressedJ;
+    }
+
+    public bool GetTossInput(Players player)
+    {
+        return isPressedSpace;
+    }
+
+    public bool GetServeInput(Players player)
+    {
+        return isPressedSpace;
+    }
+
+    public bool GetEscapeInput(Players player)
+    {
+        return isPressedEscape;
+    }
+
+    private void ExtendInputEastFrame()
     {
         isPressedL = true;
-        StartCoroutine(DelayMethod(defaultExtensionFrame, () => { isPressedL = false; }));
+        StartCoroutine(ExtendFrame(extensionFrame, () => { isPressedL = false; }));
     }
 
-    private void ExtendInputFrameK()
+    private void ExtendInputSouthFrame()
     {
         isPressedK = true;
-        StartCoroutine(DelayMethod(defaultExtensionFrame, () => { isPressedK = false; }));
+        StartCoroutine(ExtendFrame(extensionFrame, () => { isPressedK = false; }));
     }
 
-    private void ExtendInputFrameI()
+    private void ExtendInputNorthFrame()
     {
         isPressedI = true;
-        StartCoroutine(DelayMethod(defaultExtensionFrame, () => { isPressedI = false; }));
+        StartCoroutine(ExtendFrame(extensionFrame, () => { isPressedI = false; }));
     }
 
-    private void ExtendInputFrameJ()
+    private void ExtendInputWestFrame()
     {
         isPressedJ = true;
-        StartCoroutine(DelayMethod(defaultExtensionFrame, () => { isPressedJ = false; }));
+        StartCoroutine(ExtendFrame(extensionFrame, () => { isPressedJ = false; }));
     }
 
-    private IEnumerator DelayMethod(int delayFrameCount, Action action)
+    private IEnumerator ExtendFrame(int frame, Action action)
     {
-        for (var i = 0; i < delayFrameCount; i++) { yield return null; }
+        for (int i = 0; i < frame; i++) { yield return null; }
         action();
     }
 }

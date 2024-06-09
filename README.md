@@ -42,61 +42,77 @@ The rules are in accordance with real tennis.
 
 ![MinimumTennis_操作方法_ゲームパッド_英](https://github.com/open-video-game-library/MinimumTennis/assets/63552585/f701ff26-7514-4ced-b29c-2f7e70f6a565)
 
-
-
-
 - Joy-Con Operation (Motion Control)    
 	- To hit different types of shot with the Joy-Con controls, hold down the button corresponding to each type of pitch and shake the Joy-Con.
 	
 ![MinimumTennis_操作方法_ジョイコン_英](https://github.com/open-video-game-library/MinimumTennis/assets/63552585/09ab75d2-a5df-45e6-b428-58971dd7d8cd)
 
+### TIPS
+
+- In common with all operation methods, a volley can be made by hitting a ball back in front of the service line with no bounce.
+- Also, in common with all operation methods, a smash can be made by hitting a ball with no bounce before the service line at a certain height.
+- At the moment of serve, the direction of serve can be changed by inputting the left or right movement.
 
 ## Features
 
-- Parameter Adjustment Function
+- Normal Play
 
-	- The following parameters can be adjusted on the game.
-	
-		- Speed of player and opponent movement
-		- Speed of balls hit by players and opponents
-		- Time of player's reaction (during motion operation)
-		- Time of opponent's reaction
-		- Distance traveled to reach opponent's shot
-		- Playstyle
-		- Match ending condition
+	- In this mode, you play against the CPU in a match format using the keyboard or gamepad.
+ 	- This mode can be selected by clicking the "Normal Mode" button on the home screen.
+	- You can check the controller connection status on the game settings screen after selecting a character.
 
-- Parameter Output Functions
+- Two Players Play
+
+	- Two players can play against each other by connecting two gamepads to the computer.
+ 	- Click the "Play with two players" button on the home screen to select this option.
+	- You can check the connection status of the game pad on the game settings screen after selecting a character.
+
+- Parameter Settings
+
+	- You can edit your player's parameters while practicing rallies with your opponent.
+ 	- You can select this option by clicking on the "Parameter setting" button on the home screen.
+ 	- The following parameters can be edited for Player 1 and Player 2
+
+		- Movement speed
+		- Acceleration
+		- Ball speed
+		- Reaction Speed
+		- Distance to reach the shot
+
+- Training Tasks
+
+	- You can play three types of tasks specialized for each of movement, ball return, and rally.
+ 	- You can select one by clicking the "Training task" button on the home screen.
+ 	- The Moving task, which specializes in moving, is a task to catch up with a served ball and hit it back to the opponent's court.
+  	- The Hitting task, which specializes in returning the ball, is to hit the served ball back to the red area of the opponent's court.
+  	- Rallying tasks, which focus on rallying, are tasks to connect as many rallies as possible within a time limit.
+  	- In the Moving and Hitting tasks, the player cannot hit the ball back with no bounce.
+
+- Multiple Controller Support
+
+	- The game supports keyboard control, gamepad control, and Joy-Con (motion control).
+ 	- In the game setting screen of each mode, you can select the controller to be used from the connected controllers.
+ 	- It is also possible to set the ball return operation and the movement operation to auto operation. (If you want to set only one of the operations to auto, you will need to edit the script.)
+  	  ![image](https://github.com/open-video-game-library/MinimumTennis/assets/77042312/9f9aca1f-cd7e-4be0-9438-7bd678a173dc)
+
+ 
+- Parameter Export Function
 
 	- The following parameters can be output as a CSV file at the end of the game.
+ 	- The file can be output after a game in "Normal Mode" or "Play with two players" mode.
 	
-		- Winner
+		- Winners
 		- Number of games won by the player
-		- Number of games won by the opponents
-		- Number of times the player netted
-		- Number of times the opponent netted
-		- Number of times the player's ball went out
-		- Number of times the opponent's ball went out
-		- Number of times the player's 2 bounces
-		- Number of times the opponent's 2 bounces
-		- Number of times the player's double-fault.
-		- Number of times the player's double-fault.
-		- Maximum number of rallies
-
-- Competitive Play
-
-	- By connecting two gamepads to a computer, two players can play against each other.
-	- As shown in the image below, the number of controllers currently registered is displayed on the title screen. (Two are connected in the image below)
-	
-	![MinimumTennis_登録コントローラ数](https://user-images.githubusercontent.com/77042312/187391138-cc945035-79b5-4f0b-b90d-22efeb7b9c2e.png)
-	
-	- Clicking on the "Competition Button" on the home screen will take you to the competition play screen.
-
-
-- Operation with Multiple Controllers
-
-	- The game supports three types of operation: keyboard operation, gamepad operation, and Joy-Con operation (motion operation).
-	- To play with keyboard control/gamepad control, click "Normal Control" on the home screen.
-	- To play with Joy-Con control (motion control), click "Motion Control" on the home screen.
+		- Number of games won by the opponent
+		- Number of games netted by the player
+		- Number of games netted by opponent
+		- Number of times a player has gone out
+		- Number of times opponent went out
+		- Number of times a player has 2 bounces
+		- Number of times opponent has 2 bounces
+		- Number of times a player has double faulted
+		- Number of times a player has double faulted
+		- Max Rallies
 
 ### Research Applications
 
@@ -110,9 +126,9 @@ The rules are in accordance with real tennis.
 
 ## Requirement
 
-OS：Windows, Mac
+OS： Windows, Mac
 
-Unity：2021.1.17f1
+Unity： 2021.3.5f1 or later
 
 ## Installation
 
@@ -123,45 +139,13 @@ Data in this repository can be cloned to the local environment by entering the f
 git clone https://github.com/open-video-game-library/Minimum-Tennis.git
 ```
 
-Open the cloned Unity project file in your local environment in the "Requirement" environment described above.
+Open the cloned Unity project file in your local environment in the "Requirement" environment above.
 
-When it opens, you will see a warning message like the image below, click on "Ignore".
+In this repository, we use an external plugin for Joy-Con![JoyconLib](https://github.com/Looking-Glass/JoyconLib) to run Joy-Con.
 
-![warning window](https://user-images.githubusercontent.com/77042312/214867252-7a2321ce-a256-45fe-98bf-fc666866d57f.png)
+Accordingly, some of the "Joycon" scripts provided by JoyconLib have been modified.
 
-When loading is finished and the Unity editor opens, there are 6 errors as shown in the image below.
-
-![error](https://user-images.githubusercontent.com/77042312/214869138-33a29413-7143-4a01-b13c-460ff922870e.png)
-
-The warnings displayed before opening the Unity editor are due to these errors.
-
-The error can be summarized simply as "Asset not found to use Joy-Con".
-
-Since the assets for using Joy-Con with Unity are third-party, the following explains how to install these assets.
-
-First, download the assets for using Joy-Con in Unity from [this page](https://github.com/Looking-Glass/JoyconLib/releases).
-
-Click on the "JoyconLib06.unitypackage" highlighted in red in the image below to download the file.
-
-![JoyconLib_GitHub](https://user-images.githubusercontent.com/77042312/214875311-4a56ce12-4cbd-4cff-9676-d66843bee620.png)
-
-Drag and drop the downloaded "JoyconLib06.unitypackage" into the Unity Editor's Project window as shown in the image below.
-
-![JoyconLib_UnityEditor](https://user-images.githubusercontent.com/77042312/214879097-f879126f-4785-41b9-8420-5a102b6c3094.png)
-
-Then, a window like the one in the image below will be displayed, and click on "Import".
-
-![JoyconLib_Import](https://user-images.githubusercontent.com/77042312/214879647-253bfb25-87c4-451e-a431-632cf38e819f.png)
-
-When the assets are finished loading, the assets are imported into the Project file and the errors disappear, but if you run the game, you will get a new error.
-
-Since this error is caused by the imported assets, rewrite the scripts in the assets.
-
-Open the "Joycon" script in the "JoyconLib_scripts" folder in the Project file as shown in the image below.
-
-![JoyconLib_EditScript](https://user-images.githubusercontent.com/77042312/215122961-42ff274b-6e4c-40a0-9754-0051295fbf47.png)
-
-Replace the code on line 370 of the opened script with the following code from the code before the change.
+(The code in line 370 of the "Joycon" script is modified as follows)
 
 before
 ```
@@ -172,10 +156,6 @@ after
 ```
 DebugPrint(string.Format("Dequeue. Queue length: {0:d}. Packet ID: {1:X2}. Timestamp: {2:X2}. Lag to dequeue: {3:t}. Lag between packets (expect 15ms): {4:g}",
 ```
-
-After rewriting the code, save it.
-
-Start the game in this state, and if no error occurs, the installation was successful.
 
 ## Usage
 
