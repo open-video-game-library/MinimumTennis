@@ -3,93 +3,130 @@ using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
 
-public class GamepadInputManager : MonoBehaviour
+public class GamepadInputManager : MonoBehaviour, IInputDevice
 {
-    [NonSerialized]
-    public bool isConnected = false;
+    private readonly int playerNum = 2;
 
-    [NonSerialized]
-    public Vector2 leftStickValue;
-    [NonSerialized]
-    public Vector2 leftStickAbsValue;
+    private bool[] isConnected;
 
-    private bool isPressedEastThisFrame = false;
-    [NonSerialized]
-    public bool isPressedEast = false;
-    [NonSerialized]
-    public bool isPressedSouth = false;
-    [NonSerialized]
-    public bool isPressedWest = false;
-    [NonSerialized]
-    public bool isPressedNorth = false;
-    [NonSerialized]
-    public bool isAnyButtonPressed = false;
+    private Vector2[] leftStickValue;
+    
+    private bool[] isPressedEast;
+    private bool[] isPressedSouth;
+    private bool[] isPressedWest;
+    private bool[] isPressedNorth;
 
-    private readonly int defaultExtensionFrame = 30;
+    private bool[] isPressedServe;
+    private bool[] isPressedStart;
 
+    // ショット用のボタンを押したあと、ボタンを押した判定が指定フレーム数持続する
+    private readonly int extensionFrame = 30;
+
+    // Start is called before the first frame update
     void Start()
     {
-        isConnected = Gamepad.current != null;
-    }
+        isConnected = new bool[playerNum];
 
-    void Update()
-    {
-        isConnected = Gamepad.current != null;
-        if (!isConnected) return;
+        leftStickValue = new Vector2[playerNum];
         
-        isPressedEastThisFrame = Gamepad.current.buttonEast.wasPressedThisFrame;
-        if (Gamepad.current.buttonEast.wasPressedThisFrame) { ExtendInputEastFrame(); }
-        else if (Gamepad.current.buttonSouth.wasPressedThisFrame) { ExtendInputSouthFrame(); }
-        else if (Gamepad.current.buttonWest.wasPressedThisFrame) { ExtendInputWestFrame(); }
-        else if (Gamepad.current.buttonNorth.wasPressedThisFrame) { ExtendInputNorthFrame(); }
-        isAnyButtonPressed = isPressedEast || isPressedSouth || isPressedWest || isPressedNorth;
+        isPressedEast = new bool[playerNum];
+        isPressedSouth = new bool[playerNum];
+        isPressedWest = new bool[playerNum];
+        isPressedNorth = new bool[playerNum];
 
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        isPressedServe = new bool[playerNum];
+        isPressedStart = new bool[playerNum];
+    }
+
+    void FixedUpdate()
+    {
+        int gamepadNum;
+        if (Gamepad.all.Count < playerNum) { gamepadNum = Gamepad.all.Count; }
+        else { gamepadNum = playerNum; }
+
+        for (int i = 0; i < gamepadNum; i++)
         {
-            leftStickValue.x = Gamepad.current.leftStick.ReadValue().x;
-            leftStickValue.y = -Gamepad.current.leftStick.ReadValue().y;
+            isConnected[i] = Gamepad.all[i] != null;
+
+            leftStickValue[i] = Gamepad.all[i].leftStick.ReadValue();
+
+            if (Gamepad.all[i].buttonEast.wasPressedThisFrame) { ExtendInputEastFrame(i); }
+            else if (Gamepad.all[i].buttonSouth.wasPressedThisFrame) { ExtendInputSouthFrame(i); }
+            else if (Gamepad.all[i].buttonNorth.wasPressedThisFrame) { ExtendInputNorthFrame(i); }
+            else if (Gamepad.all[i].buttonWest.wasPressedThisFrame) { ExtendInputWestFrame(i); }
+
+            isPressedServe[i] = Gamepad.all[i].buttonEast.wasPressedThisFrame;
+            isPressedStart[i] = Gamepad.all[i].startButton.wasPressedThisFrame;
         }
-        else { leftStickValue = Gamepad.current.leftStick.ReadValue(); }
-
-        leftStickAbsValue.x = Mathf.Abs(leftStickValue.x);
-        leftStickAbsValue.y = Mathf.Abs(leftStickValue.y);
     }
 
-    public bool InputEastThisFrame()
+    public Vector2 GetMoveInput(Players player)
     {
-        bool returnValue = isPressedEastThisFrame;
-        isPressedEastThisFrame = false;
-        isPressedEast = false;
-        return returnValue;
+        return leftStickValue[(int)player];
     }
 
-    private void ExtendInputEastFrame()
+    public bool GetNormalShotInput(Players player)
     {
-        isPressedEast = true;
-        StartCoroutine(DelayMethod(defaultExtensionFrame, () => { isPressedEast = false; }));
+        return isPressedEast[(int)player];
     }
 
-    private void ExtendInputSouthFrame()
+    public bool GetLobShotInput(Players player)
     {
-        isPressedSouth = true;
-        StartCoroutine(DelayMethod(defaultExtensionFrame, () => { isPressedSouth = false; }));
+        return isPressedSouth[(int)player];
     }
 
-    private void ExtendInputWestFrame()
+    public bool GetFastShotInput(Players player)
     {
-        isPressedWest = true;
-        StartCoroutine(DelayMethod(defaultExtensionFrame, () => { isPressedWest = false; }));
+        return isPressedNorth[(int)player];
     }
 
-    private void ExtendInputNorthFrame()
+    public bool GetDropShotInput(Players player)
     {
-        isPressedNorth = true;
-        StartCoroutine(DelayMethod(defaultExtensionFrame, () => { isPressedNorth = false; }));
+        return isPressedWest[(int)player];
     }
 
-    private IEnumerator DelayMethod(int delayFrameCount, Action action)
+    public bool GetTossInput(Players player)
     {
-        for (var i = 0; i < delayFrameCount; i++) { yield return null; }
+        return isPressedServe[(int)player];
+    }
+
+    public bool GetServeInput(Players player)
+    {
+        return isPressedServe[(int)player];
+    }
+
+    public bool GetEscapeInput(Players player)
+    {
+        return isPressedStart[(int)player];
+    }
+
+    private void ExtendInputEastFrame(int playNum)
+    {
+        isPressedEast[playNum] = true;
+        StartCoroutine(ExtendFrame(extensionFrame, () => { isPressedEast[playNum] = false; }));
+    }
+
+    private void ExtendInputSouthFrame(int playNum)
+    {
+        isPressedSouth[playNum] = true;
+        StartCoroutine(ExtendFrame(extensionFrame, () => { isPressedSouth[playNum] = false; }));
+    }
+
+    private void ExtendInputNorthFrame(int playNum)
+    {
+        isPressedNorth[playNum] = true;
+        StartCoroutine(ExtendFrame(extensionFrame, () => { isPressedNorth[playNum] = false; }));
+    }
+
+    private void ExtendInputWestFrame(int playNum)
+    {
+        isPressedWest[playNum] = true;
+        StartCoroutine(ExtendFrame(extensionFrame, () => { isPressedWest[playNum] = false; }));
+    }
+
+    private IEnumerator ExtendFrame(int frame, Action action)
+    {
+        for (int i = 0; i < frame; i++) { yield return null; }
         action();
     }
 }

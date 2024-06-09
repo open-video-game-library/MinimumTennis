@@ -1,53 +1,59 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using System.Collections;
 
-public class JoyconInputManager : MonoBehaviour
+public enum SwingSide
 {
+    none,
+    left,
+    right
+}
+
+public enum Swing
+{
+    none,
+    fore,
+    back
+}
+
+public class JoyconInputManager : MonoBehaviour, IInputDevice
+{
+    // Editable Parameter
     private float threhold = 1.0f;
 
-    private static readonly Joycon.Button[] m_buttons =
-        Enum.GetValues(typeof(Joycon.Button)) as Joycon.Button[];
-
+    // Joy-Con
     private List<Joycon> m_joycons;
     private Joycon m_joyconL;
     private Joycon m_joyconR;
-    private Joycon.Button? m_pressedButtonL;
-    private Joycon.Button? m_pressedButtonR;
+    private Joycon dominantJoycon;
 
-    [NonSerialized]
-    public string swing = null;
+    // スイング判定に使用するパラメータ
+    private SwingSide swing;
+
+    // スイング判定用の変数
     private readonly int defaultTestTime = 10;
-    private int testTime;
+    private float testTime;
     private bool tested;
+
     private int swingCoolTime = 60;
 
     private float maxAccel = 0.0f;
     private float minAccel = 0.0f;
 
-    [NonSerialized]
-    public bool fore;
-    [NonSerialized]
-    public bool back;
-    [NonSerialized]
-    public bool anySwing;
-    [NonSerialized]
-    public bool tos;
+    private Vector2 moveStickValue;
 
-    [NonSerialized]
-    public bool isPressedEast;
-    [NonSerialized]
-    public bool isPressedSouth;
-    [NonSerialized]
-    public bool isPressedNorth;
-    [NonSerialized]
-    public bool isPressedWest;
+    private Swing swingResult;
+
+    private bool isPressedEast;
+    private bool isPressedSouth;
+    private bool isPressedNorth;
+    private bool isPressedWest;
+
+    private bool isPressedStart;
 
     void Start()
     {
-        testTime = defaultTestTime;
+        threhold = Parameters.motionThrehold;
 
         m_joycons = JoyconManager.Instance.j;
         if (m_joycons == null || m_joycons.Count <= 0) { return; }
@@ -55,80 +61,133 @@ public class JoyconInputManager : MonoBehaviour
         m_joyconL = m_joycons.Find(c => c.isLeft);
         m_joyconR = m_joycons.Find(c => !c.isLeft);
 
-        threhold = MotionThrehold.motionThrehold;
+        // 聞き手に応じてスイング判定に用いるJoy-Conを代入
+        if (Parameters.charactersDominantHand[0] == DominantHand.left) { dominantJoycon = m_joyconL; }
+        else { dominantJoycon = m_joyconR; }
+
+        testTime = defaultTestTime;
     }
 
     void Update()
     {
-        threhold = MotionThrehold.motionThrehold;
-        
-        if (m_joyconR != null || m_joyconL != null)
-        {
-            if (m_joyconR.GetButtonDown(Joycon.Button.DPAD_RIGHT)) { tos = true; }
-            else { tos = false; }
-
-            isPressedEast = m_joyconR.GetButton(Joycon.Button.DPAD_RIGHT);
-            isPressedSouth = m_joyconR.GetButton(Joycon.Button.DPAD_DOWN);
-            isPressedWest = m_joyconR.GetButton(Joycon.Button.DPAD_LEFT);
-            isPressedNorth = m_joyconR.GetButton(Joycon.Button.DPAD_UP);
-        }
-
-        anySwing = fore || back;
+        threhold = Parameters.motionThrehold;
     }
 
     void FixedUpdate()
     {
-        m_pressedButtonL = null;
-        m_pressedButtonR = null;
+        // 左右のJoy-Conが繋がっていない場合
+        if (m_joycons == null || m_joyconL == null || m_joyconR == null) { return; }
 
-        if (m_joycons == null || m_joycons.Count < 1) return;
-
-        foreach (var button in m_buttons)
+        if (m_joyconL != null)
         {
-            if (m_joyconL != null && m_joyconL.GetButton(button)) { m_pressedButtonL = button; }
-            if (m_joyconR != null && m_joyconR.GetButton(button)) { m_pressedButtonR = button; }
+            float[] stick;
+
+            if (Parameters.charactersDominantHand[0] == DominantHand.left) { stick = m_joyconR.GetStick(); }
+            else { stick = m_joyconL.GetStick(); }
+
+            moveStickValue = new Vector2(stick[0], stick[1]);
         }
 
-        if (m_joyconR.GetAccel().y * threhold > 1.0f && m_joyconR.GetAccel().y * threhold < -2.50f
-            && swing == null)
+        if (m_joyconR != null)
+        {
+            isPressedEast = dominantJoycon.GetButton(Joycon.Button.DPAD_RIGHT);
+            isPressedSouth = dominantJoycon.GetButton(Joycon.Button.DPAD_DOWN);
+            isPressedWest = dominantJoycon.GetButton(Joycon.Button.DPAD_LEFT);
+            isPressedNorth = dominantJoycon.GetButton(Joycon.Button.DPAD_UP);
+
+            isPressedStart = m_joyconR.GetButtonDown(Joycon.Button.PLUS) || m_joyconL.GetButtonDown(Joycon.Button.MINUS);
+        }
+
+        JudgeSwing();
+    }
+
+    // for Joy-Cons Debug
+    private void OnGUI()
+    {
+        // Enterキーを押している間はJoy-Conのデバッグ情報を表示する
+        if (!Input.GetKey(KeyCode.Return)) { return; }
+
+        var style = GUI.skin.GetStyle("label");
+        style.fontSize = 10;
+
+        if (m_joycons == null || m_joycons.Count <= 0)
+        {
+            GUILayout.Label("Joy-Con is not connected.");
+            return;
+        }
+
+        if (m_joyconL == null) { GUILayout.Label("Joy-Con (L) is not connected."); }
+        else { GUILayout.Label("Joy-Con (L) is connected."); }
+
+        if (m_joyconR == null) { GUILayout.Label("Joy-Con (R) is not connected."); }
+        else { GUILayout.Label("Joy-Con (R) is connected."); }
+
+        foreach (var joycon in m_joycons)
+        {
+            var isLeft = joycon.isLeft;
+            var name = isLeft ? "Joy-Con (L)" : "Joy-Con (R)";
+            var stick = joycon.GetStick();
+            var gyro = joycon.GetGyro();
+            var accel = joycon.GetAccel();
+            var orientation = joycon.GetVector();
+
+            GUILayout.BeginVertical(GUILayout.Width(480));
+            GUILayout.Label(name);
+            GUILayout.Label(string.Format("Stick：({0}, {1})", stick[0], stick[1]));
+            GUILayout.Label("Gyro：" + gyro);
+            GUILayout.Label("Acceleration：" + accel);
+            GUILayout.Label("Orientation：" + orientation);
+
+            GUILayout.EndVertical();
+        }
+    }
+
+    private void JudgeSwing()
+    {
+        if (dominantJoycon.GetAccel().y * threhold > 1.0f && dominantJoycon.GetAccel().y * threhold < -2.50f
+            && swing == SwingSide.none)
         {
             testTime = defaultTestTime;
-            swing = "back";
+            swing = SwingSide.left;
         }
-        else if (m_joyconR.GetAccel().y * threhold < -1.80f
-            && swing == null)
+        else if (dominantJoycon.GetAccel().y * threhold < -1.80f
+            && swing == SwingSide.none)
         {
             testTime = defaultTestTime;
-            swing = "fore";
+            swing = SwingSide.right;
         }
 
-        if (swing != null)
+        if (swing != SwingSide.none)
         {
-            if (swing == "fore")
+            if (swing == SwingSide.right)
             {
                 if (testTime > 0)
                 {
-                    if (m_joyconR.GetAccel().y * threhold > maxAccel) { maxAccel = m_joyconR.GetAccel().y * threhold; }
+                    if (dominantJoycon.GetAccel().y * threhold > maxAccel) { maxAccel = dominantJoycon.GetAccel().y * threhold; }
                     tested = false;
                     testTime--;
                 }
                 else if (testTime <= 0 && !tested)
                 {
-                    fore = true;
+                    if (Parameters.charactersDominantHand[0] == DominantHand.left) { swingResult = Swing.back; }
+                    else { swingResult = Swing.fore; }
+
                     tested = true;
                 }
             }
-            else if (swing == "back")
+            else if (swing == SwingSide.left)
             {
                 if (testTime > 0)
                 {
-                    if (m_joyconR.GetAccel().y * threhold < minAccel) { minAccel = m_joyconR.GetAccel().y * threhold; }
+                    if (dominantJoycon.GetAccel().y * threhold < minAccel) { minAccel = dominantJoycon.GetAccel().y * threhold; }
                     tested = false;
                     testTime--;
                 }
                 else if (testTime <= 0 && !tested)
                 {
-                    back = true;
+                    if (Parameters.charactersDominantHand[0] == DominantHand.left) { swingResult = Swing.fore; }
+                    else { swingResult = Swing.back; }
+                    
                     tested = true;
                 }
             }
@@ -137,9 +196,8 @@ public class JoyconInputManager : MonoBehaviour
 
             if (swingCoolTime < 0)
             {
-                swing = null;
-                fore = false;
-                back = false;
+                swing = SwingSide.none;
+                swingResult = Swing.none;
                 maxAccel = 0.0f;
                 minAccel = 0.0f;
                 testTime = defaultTestTime;
@@ -148,45 +206,43 @@ public class JoyconInputManager : MonoBehaviour
         }
     }
 
-    private void OnGUI()
+    public Vector2 GetMoveInput(Players player)
     {
-        if (!Input.GetKey(KeyCode.Return)) { return; }
+        return moveStickValue;
+    }
 
-        var style = GUI.skin.GetStyle("label");
-        style.fontSize = 20;
+    public bool GetNormalShotInput(Players player)
+    {
+        return swingResult != Swing.none;
+    }
 
-        if (m_joycons == null || m_joycons.Count <= 0)
-        {
-            GUILayout.Label("Joy-Con が接続されていません");
-            return;
-        }
+    public bool GetLobShotInput(Players player)
+    {
+        return isPressedSouth && swingResult != Swing.none;
+    }
 
-        if (m_joyconL == null) { GUILayout.Label("Joy-Con (L) が接続されていません"); }
-        if (m_joyconR == null)
-        {
-            GUILayout.Label("Joy-Con (R) が接続されていません");
-            return;
-        }
+    public bool GetFastShotInput(Players player)
+    {
+        return isPressedNorth && swingResult != Swing.none;
+    }
 
-        GUILayout.BeginHorizontal(GUILayout.Width(960));
+    public bool GetDropShotInput(Players player)
+    {
+        return isPressedWest && swingResult != Swing.none;
+    }
 
-        // Joy-Conの右側のみ読み取り（デバッグ用）
-        var name = "Joy-Con (R)";
-        var button = m_pressedButtonR;
-        var stick = m_joyconR.GetStick();
-        var gyro = m_joyconR.GetGyro();
-        var accel = m_joyconR.GetAccel();
-        var orientation = m_joyconR.GetVector();
+    public bool GetTossInput(Players player)
+    {
+        return isPressedEast;
+    }
 
-        GUILayout.BeginVertical(GUILayout.Width(480));
-        GUILayout.Label(name);
-        GUILayout.Label("押されているボタン：" + button);
-        GUILayout.Label(string.Format("スティック：({0}, {1})", stick[0], stick[1]));
-        GUILayout.Label("ジャイロ：" + gyro);
-        GUILayout.Label("加速度：" + accel);
-        GUILayout.Label("傾き：" + orientation);
-        GUILayout.EndVertical();
+    public bool GetServeInput(Players player)
+    {
+        return swingResult != Swing.none;
+    }
 
-        GUILayout.EndHorizontal();
+    public bool GetEscapeInput(Players player)
+    {
+        return isPressedStart;
     }
 }

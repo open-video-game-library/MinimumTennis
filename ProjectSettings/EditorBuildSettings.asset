@@ -9,14 +9,26 @@ EditorBuildSettings:
     path: Assets/Scenes/HomeScene.unity
     guid: 019bb90202860fe4682f7de94c2b9bba
   - enabled: 1
+    path: Assets/Scenes/CharacterSelectScene.unity
+    guid: 79da3c28253819e45a83f3513a5331d7
+  - enabled: 1
+    path: Assets/Scenes/GameSettingScene.unity
+    guid: b5eafec0a9f9cf841b50d6637a27b2c8
+  - enabled: 1
     path: Assets/Scenes/TennisScene.unity
     guid: 63a8db4e1edb619418492c4cfc1b8679
   - enabled: 1
-    path: Assets/Scenes/MotionTennisScene.unity
-    guid: 5e1d00dfa350c3d42881bb3826695a66
+    path: Assets/Scenes/ResultScene.unity
+    guid: 7348f9369fbde984f94b1efbb4538a45
   - enabled: 1
-    path: Assets/Scenes/CompetitionScene.unity
-    guid: c2f99ec2967c02e41aa62643166a7daa
+    path: Assets/Scenes/ParameterSettingScene.unity
+    guid: 265c3ac861321bb49863c9b20a932d7e
+  - enabled: 1
+    path: Assets/Scenes/TaskScene.unity
+    guid: 5763a500b1a64004cbad94f88cb00f30
+  - enabled: 1
+    path: Assets/Scenes/TaskResultScene.unity
+    guid: 0c14675dfa46e1545863d8aa83666c99
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: c5688f932d8fe554e84c8500c2f80a5d, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e67e08905e3777e40869010eb4676a9d, type: 2}

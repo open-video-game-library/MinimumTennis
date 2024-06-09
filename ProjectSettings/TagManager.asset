@@ -10,7 +10,8 @@ TagManager:
   - Wall
   - Court
   - Opponent
-  - Enemy
+  - UMA
+  - Toggle
   layers:
   - Default
   - TransparentFX
@@ -18,9 +19,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - P1
+  - P2
+  - Field
   - 
   - 
   - 
