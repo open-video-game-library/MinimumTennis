@@ -136,7 +136,7 @@ Unity can be installed [here](https://unity3d.com/get-unity/download/archive).
 
 Data in this repository can be cloned to the local environment by entering the following command.
 ```
-git clone https://github.com/open-video-game-library/Minimum-Tennis.git
+git clone https://github.com/open-video-game-library/MinimumTennis.git
 ```
 
 Open the cloned Unity project file in your local environment in the "Requirement" environment above.
